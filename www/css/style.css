@@ -1,0 +1,255 @@
+/* Empty. Add your own CSS if you like */
+
+@font-face {
+  font-family: "museo sans 100";
+  src: url("fonts/MuseoSans_100.otf") format("opentype"); }
+
+@font-face {
+  font-family: "museo sans 300";
+  src: url("fonts/MuseoSans_300.otf") format("opentype"); }
+
+@font-face {
+  font-family: "museo sans 500";
+  src: url("fonts/MuseoSans_500.otf") format("opentype"); }
+
+body {
+  font-family: 'museo sans 100', sans-serif;
+  background: #fafafa;
+  color: #575756; }
+
+/*titles*/
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'museo sans 700', 'museo sans', 'roboto', sans-serif;
+  text-transform: uppercase;
+   }
+
+p {
+  font-family: 'museo sans 300';
+  font-size: 12pt;
+  line-height: 16pt; }
+
+.bar.bar-balanced{
+background-color: #93C01F !important;
+}
+
+.pane-int {
+    background-color: #F2F2F2;
+}
+
+.pane-proj {
+    background-color: #F2F2F2;
+}
+
+.btn-nav-home{
+    background-color: #93C01F !important;
+    border:none;
+}
+
+.ion-size{
+    font-size: 25px;
+}
+.pane-home {
+    background: url(../img/login.png) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+}
+
+.img-logo{
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.img-or{
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo-row{
+    margin-top: 100px;
+}
+
+.mid-col{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button.button-transparent{
+    border-color: #fff;
+    border-radius: 25px;
+    color: #fff;
+    width: 300px;
+    background-color: transparent;
+}
+
+.button.button-transparent:hover{
+    background-color: #ffffff;
+    border-color: #fff;
+    color: #000000;
+}
+
+.button.button-donate{
+    border-color: #fff;
+    border-radius: 25px;
+    color: #fff;
+    width: 300px;
+    background-color: transparent;
+}
+
+.button-donate-camp{
+    border-color: #fff;
+    border-radius: 25px;
+    color: #000;
+    width: 300px;
+    background-color: #FFFFFF;
+}
+
+.button.button-donate-where{
+    border-color: #fff;
+    border-radius: 25px;
+    color: #fff;
+    width: 300px;
+    background-color: #93C01F;
+}
+
+.button.button-donate:hover{
+    background-color: #93C01F;
+    color: #ffffff;
+    border-color: #93C01F;
+}
+
+.region-heading{
+    font-size:18px;
+    color:#ffffff;
+}
+
+.donation-col{
+    margin-top: 20px;
+    color: #fff;
+    background-color: #44535D;
+    border:solid;
+    border-color: #44535D;
+}
+
+.donation-heading{
+     color: #fff;
+     padding-left: 05px;
+     font-size: 40px;
+}
+
+.label-donate{
+    padding-left: 05px;
+}
+
+.express-donation{
+    padding-top: 3px;
+    padding-left: 2px;
+}
+
+.button-expdonate{
+    background-color: #93C01F !important;
+    min-height:38px !important;
+    padding: 5px 30px 0px;
+    border-radius: 0px;
+    font-size: 16px;
+
+}
+
+.int-proj-headings{
+    margin-top:20px;
+    color: #000000;
+}
+
+.input-dollar{
+    width: auto;
+}
+
+.item-input-dollar{
+    padding: 0px 0 0px 16px;
+}
+
+.program-item{
+    border: solid;
+    border-color: #ffffff;
+    margin-right: 2px;
+    /* margin-top: -8px; */
+    /*margin: 15px;*/
+    min-height: 100px;
+    max-width: 110px;
+    margin-bottom: -6px;
+    background-color: #ffffff;
+}
+
+.campaign-col{
+    margin-right: 10px;
+}
+
+.button-readmore{
+    background-color: transparent;
+    border:solid;
+    border-width: 1px;
+}
+
+.button-readmore-camp{
+    background-color: transparent;
+    border:solid;
+    border-width: 1px;
+    color: #ffffff
+}
+
+
+
+.btn-close{
+    color:#000;
+    float: right;
+}
+
+.program-desc{
+    padding: 10px;
+    text-align: justify;
+}
+
+.camp-content{
+     background-color: #44535D;
+    color: #ffffff;
+}
+
+.btn-close-camp{
+    background-color: transparent;
+    color:#ffffff;
+    float: right;
+}
+
+.popover { height:200px; width: 200px; }
+
+.camp-desc{
+
+    padding: 20px;
+    text-align: justify;
+}
+
+.kebab-menu{
+    padding: 10px;
+}
+
+.kebab-menu > li{
+    padding-bottom: 15px;
+    font-size: 18px;
+}
+
+.spinner svg {
+  margin-top: 30px;
+  width: 64px;
+  height: 64px;
+  stroke: #444;
+  fill: #444;
+}
+
+.camp-desc > h4{
+    color: #ffffff;
+}

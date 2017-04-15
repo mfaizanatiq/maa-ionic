@@ -1,0 +1,21 @@
+  <ion-modal-view>
+    <ion-content class="camp-content">
+
+      <button class="button  btn-close-camp" ng-click="closeCampaign()"><i class="ion-android-close"></i></button>
+
+      <div class="row">
+        <div class="col-md-12 mid-col camp-desc" >
+      <h4>{{indexofCamp.DocumentName}}</h4>
+      <p>{{indexofCamp.CampaignDescription | htmlToPlaintext | limitTo:numLimitCamp}}
+            <button ng-show="indexofCamp.CampaignDescription.length >= 100 && readfullCamp" type="button" class="button button-block button-readmore-camp" ng-click="readMoreCamp()">Read More <i class="ion-ios-arrow-down"></i></button>
+            <button ng-if="indexofCamp.CampaignDescription.length >= 100 && readlessCamp" type="button" class="button button-block button-readmore-camp" ng-click="readLessCamp()">Read Less <i class="ion-ios-arrow-up"></i></button></p>
+        </div>
+      </div>
+
+      <div class="row" ng-if="indexofCamp.CampaignDescription" >
+             <div class="col-md-12 mid-col" style="margin-top: 10px" >
+                  <a class="button button-block button-donate-camp">DONATE FOR THIS PROJECT</a>
+              </div>
+          </div>
+    </ion-content>
+  </ion-modal-view>
