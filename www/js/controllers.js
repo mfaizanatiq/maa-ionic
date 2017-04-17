@@ -142,7 +142,7 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('ProjCtrl', function($scope, $ionicModal,$timeout,$stateParams,$http,apiTesting) {
+.controller('ProjCtrl', function($scope,$cordovaInAppBrowser, $ionicModal,$timeout,$stateParams,$http,apiTesting) {
     console.log('Project Controller');
     $scope.spinner = true;
     var currentAllias = $stateParams.projName;
@@ -203,6 +203,26 @@ angular.module('starter.controllers', [])
     $scope.readlessCamp=false;
     };
 
+    $scope.expressDonateCamp=function(nodeID){
+
+
+    var options = {
+      location: 'yes',
+      clearcache: 'yes',
+      toolbar: 'yes'
+    };
+
+     $cordovaInAppBrowser.open('http://uat.muslimaid.org.au/donate-now?&campaign='+nodeID,'_blank', options)
+      .then(function(event) {
+        // success
+        $scope.donation.amount = 0;
+      })
+      .catch(function(event) {
+        // error
+      });
+
+      };
+
 
         $ionicModal.fromTemplateUrl('templates/campaign.html', {
         scope: $scope,
@@ -224,10 +244,12 @@ angular.module('starter.controllers', [])
 
 
 
+
+
 })
 
 
-.controller('LocProjCtrl', function($scope, $ionicModal,$timeout,$stateParams,$http,apiTesting) {
+.controller('LocProjCtrl', function($scope, $ionicModal,$cordovaInAppBrowser,$timeout,$stateParams,$http,apiTesting) {
     console.log('Local Project Controller');
     $scope.spinner = true;
     var currentAllias = $stateParams.projName;
@@ -288,8 +310,28 @@ angular.module('starter.controllers', [])
     $scope.readlessCamp=false;
     };
 
+    $scope.expressDonateLocCamp=function(nodeID){
 
-        $ionicModal.fromTemplateUrl('templates/campaign.html', {
+
+    var options = {
+      location: 'yes',
+      clearcache: 'yes',
+      toolbar: 'yes'
+    };
+
+     $cordovaInAppBrowser.open('http://uat.local.muslimaid.org.au/donate-now?&campaign='+nodeID,'_blank', options)
+      .then(function(event) {
+        // success
+        $scope.donation.amount = 0;
+      })
+      .catch(function(event) {
+        // error
+      });
+
+      };
+
+
+        $ionicModal.fromTemplateUrl('templates/localcamp.html', {
         scope: $scope,
         animation: 'slide-in-up'
       }).then(function(modal) {

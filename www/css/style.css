@@ -12,6 +12,10 @@
   font-family: "museo sans 500";
   src: url("fonts/MuseoSans_500.otf") format("opentype"); }
 
+@font-face {
+  font-family: "museo sans 700";
+  src: url("fonts/MuseoSans_700.otf") format("opentype"); }
+
 body {
   font-family: 'museo sans 100', sans-serif;
   background: #fafafa;
@@ -25,11 +29,12 @@ h1,h2,h3,h4,h5,h6 {
 
 p {
   font-family: 'museo sans 300';
-  font-size: 12pt;
-  line-height: 16pt; }
+  font-size: 14pt;
+  line-height: 18pt; }
 
 .bar.bar-balanced{
 background-color: #93C01F !important;
+color:#485f0f;
 }
 
 .pane-int {
@@ -126,6 +131,7 @@ background-color: #93C01F !important;
 .region-heading{
     font-size:18px;
     color:#ffffff;
+    font-family: 'museo sans 300'
 }
 
 .donation-col{
@@ -139,7 +145,8 @@ background-color: #93C01F !important;
 .donation-heading{
      color: #fff;
      padding-left: 05px;
-     font-size: 40px;
+     font-size: 46px;
+     font-family: 'museo sans 500';
 }
 
 .label-donate{
@@ -154,7 +161,7 @@ background-color: #93C01F !important;
 .button-expdonate{
     background-color: #93C01F !important;
     min-height:38px !important;
-    padding: 5px 30px 0px;
+    padding: 5px 30px 7px;
     border-radius: 0px;
     font-size: 16px;
 
@@ -163,10 +170,19 @@ background-color: #93C01F !important;
 .int-proj-headings{
     margin-top:20px;
     color: #000000;
+    font-family: 'museo sans 300';
 }
+
+.loc-proj-headings{
+    margin-top:20px;
+    color: #000000;
+    font-family: 'museo sans 300';
+}
+
 
 .input-dollar{
     width: auto;
+    margin-top: 2px;
 }
 
 .item-input-dollar{
@@ -192,13 +208,13 @@ background-color: #93C01F !important;
 .button-readmore{
     background-color: transparent;
     border:solid;
-    border-width: 1px;
+    border-width: 0px;
 }
 
 .button-readmore-camp{
     background-color: transparent;
     border:solid;
-    border-width: 1px;
+    border-width: 0px;
     color: #ffffff
 }
 
@@ -211,7 +227,11 @@ background-color: #93C01F !important;
 
 .program-desc{
     padding: 10px;
-    text-align: justify;
+    text-align: left;
+}
+
+.program-desc > h3{
+    font-family: 'museo sans 500'
 }
 
 .camp-content{
@@ -230,7 +250,7 @@ background-color: #93C01F !important;
 .camp-desc{
 
     padding: 20px;
-    text-align: justify;
+    text-align: left;
 }
 
 .kebab-menu{
@@ -254,8 +274,19 @@ background-color: #93C01F !important;
     font-family: "museo sans 500"
 }
 
+input::placeholder {
+  margin-top: 10px;
+}
 
+.expDonSec{
+    font-family: 'museo sans 500';
+}
 
-.camp-desc > h4{
+.camp-desc > h3{
     color: #ffffff;
+    font-family: 'museo sans 700';
+}
+
+.btn-custom-header{
+    color: #485f0f !important;
 }
