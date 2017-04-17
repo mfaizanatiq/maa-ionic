@@ -29,7 +29,7 @@ h1,h2,h3,h4,h5,h6 {
 
 p {
   font-family: 'museo sans 300';
-  font-size: 14pt;
+  font-size: 16px;
   line-height: 18pt; }
 
 .bar.bar-balanced{
@@ -289,4 +289,28 @@ input::placeholder {
 
 .btn-custom-header{
     color: #485f0f !important;
+}
+
+/*Faizan Styles Classes*/
+.bar-header{
+    min-height:51px;
+    padding-top:5px;
+}
+.bar-balanced, .bar-balanced .button.button-clear{
+color:#485f0f !important;
+}
+h5{font-size:18px;text-transform:initial}
+
+.button-block{
+    width: 93%;
+  line-height: 55.5px;
+  height: 55px;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #575756;
+  font-size: 14px;
+  text-transform: uppercase;
 }
