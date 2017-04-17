@@ -53,10 +53,22 @@ angular.module('starter', ['ionic','starter.controllers','starter.services','sta
       controller: 'IntCtrl'
     })
 
+    .state('loc', {
+      url: '/loc',
+      templateUrl: 'templates/loc.html',
+      controller: 'LocCtrl'
+    })
+
     .state('project', {
       url: '/project/:projName',
       templateUrl: 'templates/project.html',
       controller: 'ProjCtrl'
+    })
+
+    .state('localproject', {
+      url: '/localproject/:projName',
+      templateUrl: 'templates/localproject.html',
+      controller: 'LocProjCtrl'
     })
 
 
