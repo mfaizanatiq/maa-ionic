@@ -1,8 +1,38 @@
 angular.module('starter.controllers', [])
 
-.controller('HomeCtrl', function($scope, $ionicModal, $timeout) {
-    console.log('Hello World');
-    $scope.hello = 'Hello World';
+.controller('HomeCtrl', function($scope,$cordovaInAppBrowser,$timeout,$cordovaProgress,$rootScope,$ionicLoading, $ionicModal, $timeout) {
+    var options = {
+      location: 'no',
+      clearcache: 'yes',
+      toolbar: 'yes'
+   };
+
+   $scope.openBrowser = function() {
+
+
+      $cordovaInAppBrowser.open('http://www.muslimaid.org.au/donate-now', '_blank', options).then(function () {
+
+                         }, function (error) {
+                console.log("Error: " + error);
+            });
+
+            $rootScope.$on('$cordovaInAppBrowser:loadstart', function(e, event) {
+               // $cordovaProgress.showDeterminateWithLabel(true, 50000, "Loading")
+
+            });
+            $rootScope.$on('$cordovaInAppBrowser:loadstop', function(e, event) {
+                //$cordovaProgress.showDeterminateWithLabel(false, 1000, "Done")
+            });
+            $rootScope.$on('$cordovaInAppBrowser:loaderror', function(e, event) {
+                //alert('loaderror');
+            });
+            $rootScope.$on('$cordovaInAppBrowser:exit', function(e, event) {
+                //alert('exit');
+            });
+
+    }
+
+
 })
 
 .controller('IntCtrl', function($scope, $ionicModal,$ionicPopover,$cordovaInAppBrowser, $timeout,$location,apiTesting) {
@@ -18,6 +48,8 @@ angular.module('starter.controllers', [])
     $location.path( path );
     };
 
+    $scope.phoneNumber = "tel:+1-1800-555-5555";
+
     $scope.donation = {};
 
     $scope.expressDonate=function(){
@@ -28,7 +60,7 @@ angular.module('starter.controllers', [])
       toolbar: 'yes'
     };
 
-     $cordovaInAppBrowser.open('http://uat.muslimaid.org.au/donate-now?campaign=201&amount='+$scope.donation.amount, '_blank', options)
+     $cordovaInAppBrowser.open('http://uat.muslimaid.org.au/donate-now?campaign=201&amount='+$scope.donation.amount,'_blank', options)
       .then(function(event) {
         // success
         $scope.donation.amount = 0;
@@ -47,6 +79,9 @@ angular.module('starter.controllers', [])
 
       $scope.openPopover = function($event) {
         $scope.popover.show($event);
+        };
+    $scope.closePopover = function($event) {
+        $scope.popover.hide($event);
         };
 
     //$cordovaInAppBrowser.close();
