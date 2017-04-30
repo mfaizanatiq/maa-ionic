@@ -1,13 +1,13 @@
 <ion-popover-view>
         <ion-content scroll="false">
           <div class="list menu-content" >
-            <a class="item" ng-click="closePopover();goToVideo()"" href="">
+            <a class="item" ng-click="closePopover();scrollTo('video')" href="">
               Watch: Campaign Video
             </a>
-            <a class="item" ng-click="closePopover()" href="" target="_blank">
+            <a class="item" ng-click="closePopover();donationSummary()" href="" target="_blank">
               Donation Summary
             </a>
-            <a class="item" ng-click="closePopover()" href="" target="_blank">
+            <a class="item" ng-click="closePopover();myAccount()" href="" target="_blank">
               My Account
             </a>
             <a class="item" ng-click="closePopover();expressDonateCamp('201')">
@@ -15,9 +15,8 @@
             </a>
             <a class="item" ng-click="closePopover()" href="#/loc" >
               Switch to Local Projects
-
             </a>
-            <a class="item" ng-click="closePopover()" href="" target="_blank">
+            <a class="item" ng-click="closePopover()" href="#/aboutmaa">
               About MAA
             </a>
           </div>

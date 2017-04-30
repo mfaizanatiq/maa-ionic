@@ -1,6 +1,6 @@
-<ion-view class="pane-int">
+<ion-view class="pane-int" >
     <ion-nav-bar class="bar-balanced" align-title="left">
-        <ion-nav-back-button >
+        <ion-nav-back-button>
         </ion-nav-back-button>
         <ion-nav-buttons side="right">
             <a href="tel:+1-1800-555-5555" class="button btn-nav-home btn-custom-header">
@@ -10,32 +10,32 @@
             <i class="ion-navicon-round ion-size"></i>
             </button>
         </ion-nav-buttons>
-        <ion-nav-title >
+        <ion-nav-title>
             <img src="img/navbar-logo.png" style="width: 108px;">
         </ion-nav-title>
     </ion-nav-bar>
-    <ion-content>
+    <ion-content delegate-handle="myPageDelegate">
         <div class="row">
             <div class="col-md-12 mid-col donation-col">
                 <div class="row">
                     <div class="col-md-6">
-                    <h1 class="donation-heading">30 </h1>
+                        <h1 class="donation-heading">30 </h1>
                     </div>
                     <div class="col-md-6 express-donation">
-                    <p class="expDonSec">Seconds<br>Express Donation</p>
+                        <p class="expDonSec">Seconds<br>Express Donation</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-8">
                         <div class="list label-donate">
-                        <label class="item item-input item-input-dollar">
+                            <label class="item item-input item-input-dollar">
                         <span class="input-label input-dollar">$</span>
                         <input ng-model="donation.amount" type="text" placeholder="Donation Amount">
                         </label>
                         </div>
                     </div>
                     <div class="col-md-4">
-                   <a ng-click="expressDonate()" class="button button-small button-balanced button-expdonate">
+                        <a ng-click="expressDonate()" class="button button-small button-balanced button-expdonate">
                     DONATE
                     </a>
                     </div>
@@ -43,9 +43,9 @@
             </div>
         </div>
 
-        <div class="row" >
+        <div class="row">
             <div class="col-md-12 mid-col">
-            <h4 class="int-proj-headings" ng-click="showCampaign()">International Projects</h4 >
+                <h4 class="int-proj-headings" ng-click="showCampaign()">Global Projects</h4>
             </div>
         </div>
 
@@ -58,52 +58,51 @@
             </div>
         </div>-->
 
-    <div class="row">
-        <div class="col-100 mid-col">
-            <ion-spinner ng-show="spinner"></ion-spinner>
-            <div  ng-repeat="product in programs">
-                <div class="row" ng-if="$index % 3 === 0" >
-                    <div class="col-33 program-item"  ng-init="p1 = programs[$index]" ng-click="go('/project/{{p1.NodeAlias}}')">
-                    <div class="item-projects">
-                    <img ng-src="{{p1.image}}" width="96px" height="96px">
-                    <span>{{p1.DocumentName}}</span>
-                    </div>
-                    </div>
-                    <div class="col-33 program-item"  ng-href="programs.length > $index + 1" ng-init="p2 = programs[$index + 1]" ng-click="go('/project/{{p2.NodeAlias}}')">
-                    <div class="item-projects">
-                    <img ng-src="{{p2.image}}" width="96px" height="96px">
-                    <span>{{p2.DocumentName}}</span>
-                    </div>
-                    </div>
-                    <div class="col-33 program-item"  ng-href="programs.length > $index + 1" ng-init="p3 = programs[$index + 2]" ng-click="go('/project/{{p3.NodeAlias}}')">
-                    <div class="item-projects">
-                    <img ng-src="{{p3.image}}" width="96px" height="96px">
-                    <span>{{p3.DocumentName}}</span>
-                    </div>
-                    </div>
+        <div class="row plContainer">
+            <div class="col-lg-12 mid-col">
+                <ion-spinner ng-show="spinner"></ion-spinner>
+                   <!-- <div class="row">
+                        <div class="col-33 program-item" ng-init="p1 = programs[$index]" ng-click="go('/project/{{p1.NodeAlias}}')">
+                            <div class="item-projects">
+                                <img ng-src="{{p1.image}}" width="96px" height="96px">
+                                <span>{{p1.DocumentName}}</span>
+                            </div>
+                        </div>
+                        <div class="col-33 program-item" ng-href="programs.length > $index + 1" ng-init="p2 = programs[$index + 1]" ng-click="go('/project/{{p2.NodeAlias}}')">
+                            <div class="item-projects">
+                                <img ng-src="{{p2.image}}" width="96px" height="96px">
+                                <span>{{p2.DocumentName}}</span>
+                            </div>
+                        </div>
+                        <div class="col-33 program-item" ng-href="programs.length > $index + 1" ng-init="p3 = programs[$index + 2]" ng-click="go('/project/{{p3.NodeAlias}}')">
+                            <div class="item-projects">
+                                <img ng-src="{{p3.image}}" width="96px" height="96px">
+                                <span>{{p3.DocumentName}}</span>
+                            </div>
+                        </div>
+                    </div>-->
+                         <div class="program-item" ng-repeat="product in programs track by $index">
+<div class="col-md-4 " ng-init="p1 = programs[$index]" ng-click="go('/project/{{p1.NodeAlias}}')">
+                            <div class="item-projects">
+                                <img ng-src="{{p1.image}}" width="96px" height="96px">
+                                <span>{{p1.DocumentName}}</span>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <hr style="width: 90%; border-color: #95C123;">
+        <hr style="width: 90%; border-color: #95C123;">
 
-    <div class="row" id="video" >
+        <div class="row" id="video">
             <div class="col-md-12 mid-col">
-            <h4 style="text-align: center;">Break the Cycle this Ramadan </h4>
-            <div class="video-container"><iframe  src="https://www.youtube.com/embed/5acziUjexqk" width="340px" height="280px" frameborder="0" allowfullscreen></iframe></div>
+                <h4 style="text-align: center;">MAA Water for Life - Investment Opportunity of LIFETIME</h4>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/W2V9Ui3RUTs" width="340px" height="280px" frameborder="0" allowfullscreen></iframe>
+                </div>
 
             </div>
-    </div>
-
-
-
-
-
-
-
-
-
-            </div>
+        </div>
+        </div>
     </ion-content>
 </ion-view>

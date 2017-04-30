@@ -71,7 +71,11 @@ angular.module('starter', ['ionic','starter.controllers','starter.services','sta
       templateUrl: 'templates/localproject.html',
       controller: 'LocProjCtrl'
     })
-
+.state('aboutmaa', {
+      url: '/aboutmaa',
+      templateUrl: 'templates/aboutmaa.html',
+      controller: 'aboutMaaCtrl'
+    })
 
 
   // if none of the above states are matched, use this as the fallback

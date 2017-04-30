@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.maa.muslimaidaustralia" version="0.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>maa</name>
-  <description>
-        Muslim Aid Australia Mobile app
+  <description>&#xD;
+        Muslim Aid Australia Mobile app&#xD;
     </description>
-  <author email="you@example.com" href="http://example.com/">
-      Your Name Here
+  <author email="you@example.com" href="http://example.com/">&#xD;
+      Your Name Here&#xD;
     </author>
   <content src="index.html"/>
   <access origin="*"/>
@@ -15,6 +15,7 @@
   <access origin="sms:*" launch-external="yes"/>
   <access origin="market:*" launch-external="yes"/>
   <allow-navigation href="*"/>
+  <allow-navigation href="http://192.168.2.217:8100"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
@@ -24,6 +25,8 @@
   <preference name="orientation" value="portrait"/>
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashScreen" value="screen"/>
+  <preference name="StatusBarOverlaysWebView" value="true"/>
+  <preference name="StatusBarBackgroundColor" value="#709415"/>
   <feature name="StatusBar">
     <param name="ios-package" onload="true" value="CDVStatusBar"/>
   </feature>
