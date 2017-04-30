@@ -54,7 +54,7 @@ color:#485f0f;
     font-size: 25px;
 }
 .pane-home {
-    background: url(../img/login.png) no-repeat center center fixed;
+    background: url(../img/background.jpg) no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         background-size: cover;
@@ -234,6 +234,12 @@ color:#485f0f;
     font-family: 'museo sans 500'
 }
 
+.program-desc  h1,h2,h3,h4,h5,h6{
+    font-family: 'museo sans 500'
+    color:#ffffff !important;
+}
+
+
 .camp-content{
      background-color: #44535D;
     color: #ffffff;
@@ -245,7 +251,7 @@ color:#485f0f;
     float: right;
 }
 
-.popover { height:400px; width: 250px; }
+.popover { height:330px; width: 250px; }
 
 .camp-desc{
 
@@ -287,6 +293,17 @@ input::placeholder {
     font-family: 'museo sans 700';
 }
 
+.item-projects{
+  padding: 5px;
+  text-align: center;
+}
+
+
 .btn-custom-header{
     color: #485f0f !important;
+}
+
+.nav-bar-title{
+  color:#000000;
+  font-family: 'museo sans 500'
 }

@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('HomeCtrl', function($scope,$cordovaInAppBrowser,$timeout,$cordovaProgress,$rootScope,$ionicLoading, $ionicModal, $timeout) {
+.controller('HomeCtrl', function($scope,$cordovaInAppBrowser,$timeout,$cordovaProgress,$cordovaSpinnerDialog,$rootScope,$ionicLoading, $ionicModal, $timeout) {
     var options = {
       location: 'no',
       clearcache: 'yes',
@@ -18,6 +18,7 @@ angular.module('starter.controllers', [])
 
             $rootScope.$on('$cordovaInAppBrowser:loadstart', function(e, event) {
                // $cordovaProgress.showDeterminateWithLabel(true, 50000, "Loading")
+                //$cordovaSpinnerDialog.show("title","message", true);
 
             });
             $rootScope.$on('$cordovaInAppBrowser:loadstop', function(e, event) {
@@ -40,6 +41,18 @@ angular.module('starter.controllers', [])
     $scope.spinner = true;
     apiTesting.get_maa.get().$promise.then(function(data) {
     $scope.programs = data.cms_documents[2].MAA_Program;
+    $scope.programs[0].image = 'img/MAA-Icons-RGB_2016_Emergency_OR.png';
+    $scope.programs[1].image = 'img/MAA-Icons-RGB_2016_Food_OO.png';
+    $scope.programs[2].image = 'img/MAA-Icons-RGB_2016_Orphan_OP.png';
+    $scope.programs[3].image = 'img/MAA-Icons-RGB_2016_Ramadan_OG.png';
+    $scope.programs[4].image = 'img/MAA-Icons-RGB_2016_Qurban_OB.png';
+    $scope.programs[5].image = 'img/MAA-Icons-RGB_2016_Aqiqah_BP.png';
+    $scope.programs[6].image = 'img/MAA-Icons-RGB_2016_Water_OB.png';
+    $scope.programs[7].image = 'img/MAA-Icons-RGB_2016_Health_OP.png';
+    $scope.programs[8].image = 'img/MAA-Icons-RGB_2016_Education_OB.png';
+    $scope.programs[9].image = 'img/MAA-Icons-RGB_2016_Shelter_OB.png';
+    $scope.programs[10].image = 'img/MAA-Icons-RGB_2016_Sustainability_OG.png';
+    $scope.programs[11].image = 'img/MAA-Icons-RGB_2016_Waqf_OY.png';
     console.log( $scope.programs);
     $scope.spinner = false;
     });
@@ -71,6 +84,25 @@ angular.module('starter.controllers', [])
 
       };
 
+      $scope.myAccount=function(){
+
+    var options = {
+      location: 'no',
+      clearcache: 'yes',
+      toolbar: 'yes'
+    };
+
+     $cordovaInAppBrowser.open('https://uat.muslimaid.org.au/sign-in-register','_blank', options)
+      .then(function(event) {
+        // success
+        $scope.donation.amount = 0;
+      })
+      .catch(function(event) {
+        // error
+      });
+
+      };
+
       $ionicPopover.fromTemplateUrl('templates/menupop.html', {
         scope: $scope
       }).then(function(popover) {
@@ -84,8 +116,27 @@ angular.module('starter.controllers', [])
         $scope.popover.hide($event);
         };
 
-    //$cordovaInAppBrowser.close();
+    $scope.expressDonateCamp=function(nodeID){
 
+
+    var options = {
+      location: 'yes',
+      clearcache: 'yes',
+      toolbar: 'yes'
+    };
+
+     $cordovaInAppBrowser.open('http://uat.muslimaid.org.au/donate-now?&campaign='+nodeID,'_blank', options)
+      .then(function(event) {
+        // success
+        $scope.donation.amount = 0;
+      })
+      .catch(function(event) {
+        // error
+      });
+
+      };
+
+    //$cordovaInAppBrowser.close();
 })
 
 .controller('LocCtrl', function($scope, $ionicModal,$ionicPopover,$cordovaInAppBrowser, $timeout,$location,apiTesting) {
@@ -93,6 +144,18 @@ angular.module('starter.controllers', [])
     $scope.spinner = true;
     apiTesting.get_maa_local.get().$promise.then(function(data) {
     $scope.programs = data.cms_documents[2].MAA_Program;
+    $scope.programs[0].image = 'img/default.png';
+    $scope.programs[1].image = 'img/default.png';
+    $scope.programs[2].image = 'img/MAA_Nationa_Icons_RGB_Aged Care_OP.png';
+    $scope.programs[3].image = 'img/MAA_Nationa_Icons_RGB_Community Education_OP.png';
+    $scope.programs[4].image = 'img/MAA_Nationa_Icons_RGB_Health_OB.png';
+    $scope.programs[5].image = 'img/MAA_Nationa_Icons_RGB_Emergency_OB.png';
+    $scope.programs[6].image = 'img/MAA_Nationa_Icons_RGB_Homeless Support_OB.png';
+    $scope.programs[7].image = 'img/MAA_Nationa_Icons_RGB_Indigenous_OB.png';
+    $scope.programs[8].image = 'img/MAA_Nationa_Icons_RGB_Special Needs_BB.png';
+    $scope.programs[9].image = 'img/MAA_Nationa_Icons_RGB_Sustainable Development_OG.png';
+    $scope.programs[10].image = 'img/MAA_Nationa_Icons_RGB_Youth Development_OY.png';
+    $scope.programs[11].image = 'img/MAA_Nationa_Icons_RGB_Emergency_OR.png';
     console.log( $scope.programs);
     $scope.spinner = false;
     });
@@ -124,6 +187,26 @@ angular.module('starter.controllers', [])
 
       };
 
+
+      $scope.myAccount=function(){
+
+    var options = {
+      location: 'no',
+      clearcache: 'yes',
+      toolbar: 'yes'
+    };
+
+     $cordovaInAppBrowser.open('https://uat.local.muslimaid.org.au/sign-in-register','_blank', options)
+      .then(function(event) {
+        // success
+        $scope.donation.amount = 0;
+      })
+      .catch(function(event) {
+        // error
+      });
+
+      };
+
       $ionicPopover.fromTemplateUrl('templates/locmenupopup.html', {
         scope: $scope
       }).then(function(popover) {
@@ -136,6 +219,25 @@ angular.module('starter.controllers', [])
     $scope.closePopover = function($event) {
         $scope.popover.hide($event);
         };
+
+    $scope.expressDonateLocCamp=function(nodeID){
+
+    var options = {
+      location: 'yes',
+      clearcache: 'yes',
+      toolbar: 'yes'
+    };
+
+     $cordovaInAppBrowser.open('http://uat.local.muslimaid.org.au/donate-now?&campaign='+nodeID,'_blank', options)
+      .then(function(event) {
+        // success
+        $scope.donation.amount = 0;
+      })
+      .catch(function(event) {
+        // error
+      });
+
+      };
 
     //$cordovaInAppBrowser.close();*/
 
@@ -205,6 +307,7 @@ angular.module('starter.controllers', [])
 
     $scope.expressDonateCamp=function(nodeID){
 
+    alert(nodeID)
 
     var options = {
       location: 'yes',

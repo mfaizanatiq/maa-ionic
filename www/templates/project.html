@@ -1,6 +1,6 @@
 <ion-view class="pane-proj">
     <ion-nav-bar class="bar-balanced" align-title="left">
-        <ion-nav-back-button>
+        <ion-nav-back-button >
         </ion-nav-back-button>
         <ion-nav-title >
             Our Projects
@@ -9,7 +9,7 @@
     <ion-content>
     <div class="row">
 
-        <div class="col-md-12 mid-col program-desc" style="margin-top: 10px" >
+        <div class="col-md-12 mid-col program-desc" style="margin-top: 10px"  >
                <h3>{{data[1].MAA_Program[0].DocumentName}}</h3>
 
             <p style="margin-top: 20px" ng-bind-html="data[1].MAA_Program[0].ProgramDescription | limitTo:numLimit"></p>
@@ -42,7 +42,7 @@
 
     <div class="row">
              <div class="col-md-12 mid-col" style="margin-top: 10px" >
-                  <a ng-click="expressDonateCamp('201')" class="button button-block button-donate-where">DONATION WHERE MOST NEEDED</a>
+                  <a ng-click="expressDonateCamp('201')" class="button button-block button-donate-where">DONATE WHERE MOST NEEDED</a>
               </div>
     </div>
     </ion-content>

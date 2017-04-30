@@ -4,4 +4,10 @@ angular.module('starter.filters', []).
       return  text ? String(text).replace(/<[^>]+>/gm, '') : '';
     };
   }
-);
+)
+
+.filter('stripStyles', function() {
+  return function(str) {
+    return str.replace(/style=['"].*["']/, '');
+  }
+});

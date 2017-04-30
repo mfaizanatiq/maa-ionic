@@ -36,7 +36,8 @@ angular.module('starter', ['ionic','starter.controllers','starter.services','sta
 })
 
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
+  $ionicConfigProvider.backButton.text('').icon('ion-chevron-left').previousTitleText(false);
   $stateProvider
 
 
