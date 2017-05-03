@@ -110,7 +110,7 @@ color:#485f0f;
     border-color: #fff;
     border-radius: 25px;
     color: #000;
-    width: 300px;
+    width: 300px !important;
     background-color: #FFFFFF;
 }
 
@@ -229,7 +229,7 @@ color:#485f0f;
     background-color: transparent;
     border:solid;
     border-width: 0px;
-    color: #ffffff
+    color: #ffffff !important;
 }
 
 

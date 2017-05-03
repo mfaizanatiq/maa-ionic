@@ -93,7 +93,7 @@ angular.module('starter.controllers', [])
         });
 
     };
- 
+
 
     $ionicPopover.fromTemplateUrl('templates/menupop.html', {
       scope: $scope
@@ -390,7 +390,7 @@ angular.module('starter.controllers', [])
 
     $scope.expressDonateCamp = function (nodeID) {
 
-      alert(nodeID)
+
 
       var options = {
         location: 'yes',
