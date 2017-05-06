@@ -24,13 +24,17 @@ body {
 /*titles*/
 h1,h2,h3,h4,h5,h6 {
   font-family: 'museo sans 700', 'museo sans', 'roboto', sans-serif;
-  text-transform: uppercase;
+  text-transform:capitalize;
    }
 
 p {
   font-family: 'museo sans 300';
   font-size: 16px;
   line-height: 18pt; }
+
+.close-button{
+    font-size: 18px;
+}
 
 .bar.bar-balanced{
 background-color: #93C01F !important;
@@ -226,12 +230,13 @@ color:#485f0f;
     border:blue 1px solid;*/
 }
 .campaign-col img{
-    width:100%;
+    width:95%;
 }
 .panelDescription{
     background:white;   
     -webkit-transition: width ease-out .15s;
     transition: width ease-out .15s;
+    width:100vw;
 }
 
 .panelDescription p{
@@ -312,6 +317,8 @@ color:#485f0f;
   height: 64px;
   stroke: #444;
   fill: #444;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .menu-content > a{
@@ -360,7 +367,7 @@ color:#485f0f !important;
 h5{font-size:18px;text-transform:initial}
 
 .button-block{
-    width: 93%;
+    width: 90%;
   line-height: 55.5px;
   height: 55px;
   border-radius: 50px;
@@ -369,8 +376,14 @@ h5{font-size:18px;text-transform:initial}
   margin-top: 5px;
   margin-bottom: 5px;
   color: #575756;
-  font-size: 14px;
+  font-size: 13pt;
   text-transform: uppercase;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.text-center{
+    text-align: center;
 }
 
 body{

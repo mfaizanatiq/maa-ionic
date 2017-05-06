@@ -26,11 +26,13 @@
     </div>
     <div class="row">
         <div class="col-100 mid-col">
+            <div class="text-center">
             <ion-spinner ng-show="spinner"></ion-spinner>
-                                <div class="col col-12" style="margin-top: 10px" >
+            </div>
+                                <div class="col col-12" style="margin-top: 10px" ng-hide="spinner">
             <h4>Campaigns</h4>
         </div>
-            <div  ng-repeat="product in data[0].MAA_Campaign">
+            <!--<div  ng-repeat="product in data[0].MAA_Campaign">
                 <div class="row" ng-if="$index % 3 === 0" >
                     <div  class="col-33 campaign-col"  ng-init="p1 = data[0].MAA_Campaign[$index]" ><img src="img/maa-faded.jpg" ng-src="https://uat.muslimaid.org.au/{{p1.Campaign25AppImage.replace('~', '')}}" width="96px" height="96px" ng-click="showCampaign(p1)"></div>
                     <div class="col-33 campaign-col"  ng-href="data[0].MAA_Campaign.length > $index + 1" ng-init="p2 = data[0].MAA_Campaign[$index + 1]" ><img src="img/maa-faded.jpg" ng-src="https://uat.muslimaid.org.au/{{p2.Campaign25AppImage.replace('~', '')}}" width="96px" height="96px" ng-click="showCampaign(p2)">
@@ -38,13 +40,19 @@
                     <div class="col-33 campaign-col"  ng-href="data[0].MAA_Campaignlength > $index + 1" ng-init="p3 = data[0].MAA_Campaign[$index + 2]"><img src="maa-faded.jpg" ng-src="https://uat.muslimaid.org.au/{{p3.Campaign25AppImage.replace('~', '')}}" width="96px" height="96px" ng-click="showCampaign(p3)">
                     </div>
                 </div>
-            </div>
+            </div>-->
+              <div class="row">
+                            <div style="width:100%;min-width:330px;overflow:hidden;">
+                                <div class="campaign-col" ng-repeat="product in data[0].MAA_Campaign | filter: {Published:'1'} track by $index">
+                                    <img src="img/maa-faded.jpg" ng-src="https://uat.muslimaid.org.au/{{product.Campaign25AppImage.replace('~', '')}}" ng-click="showCampaign(product)"></div>
+                            </div>
+                        </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" ng-hide="spinner">
              <div class="col-md-12 mid-col" style="margin-top: 10px" >
-                  <a ng-click="expressDonateLocCamp({{product.DocumentID}})" class="button button-block button-donate-where">DONATE WHERE MOST NEEDED</a>
+                  <a ng-click="expressDonateLocCamp($scope.data[1].MAA_Program[0].ProgramDefaultProject)" class="button button-block button-donate-where">DONATE WHERE MOST NEEDED</a>
               </div>
     </div>
     </ion-content>

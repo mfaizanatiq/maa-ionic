@@ -14,10 +14,12 @@
 
                     <p style="margin-top: 20px" ng-bind-html="data[1].MAA_Program[0].ProgramDescription | limitTo:numLimit"></p>
 
+<div class="readmoreContainer" ng-show="data[1].MAA_Program[0].ProgramDescription.length>=300">
                     <button ng-show="data[1].MAA_Program[0].ProgramDescription.length >= 100 && readfull" type="button" class="button button-block button-readmore"
                         ng-click="readMore()">Read More <i class="ion-ios-arrow-down"></i></button>
                     <button ng-show="data[1].MAA_Program[0].ProgramDescription.length >= 100 && readless" type="button" class="button button-block button-readmore"
                         ng-click="readLess()">Read Less <i class="ion-ios-arrow-up"></i></button>
+                        </div>
                     </p>
                 </div>
 
@@ -28,13 +30,13 @@
                 </div>
                 <div class="row">
                     <div class="col-100 mid-col">
-                        <ion-spinner ng-show="spinner"></ion-spinner>
-                        <div class="col col-12" style="margin-top: 10px">
+                        <div class="text-center"><ion-spinner ng-show="spinner"></ion-spinner></div>
+                        <div class="col col-12" style="margin-top: 10px" ng-hide="spinner">
                             <h4>Campaigns</h4>
                         </div>
                         <div class="row">
                             <div style="width:100%;min-width:330px;overflow:hidden;">
-                                <div class="campaign-col" ng-repeat="product in data[0].MAA_Campaign track by $index">
+                                <div class="campaign-col" ng-repeat="product in data[0].MAA_Campaign| orderBy: 'NodeOrder' | filter: {Published:'1'} track by $index  ">
                                     <!--<div class="row" ng-if="$index % 3 === 0" >
                     <div  class="col-33 campaign-col"  ng-init="p1 = data[0].MAA_Campaign[$index]" ><img src="img/maa-faded.jpg" ng-src="https://uat.muslimaid.org.au/{{p1.Campaign25AppImage.replace('~', '')}}" width="96px" height="96px" ng-click="showCampaign(p1)"></div>
                     <div class="col-33 campaign-col"  ng-href="data[0].MAA_Campaign.length > $index + 1" ng-init="p2 = data[0].MAA_Campaign[$index + 1]" ><img src="img/maa-faded.jpg" ng-src="https://uat.muslimaid.org.au/{{p2.Campaign25AppImage.replace('~', '')}}" width="96px" height="96px" ng-click="showCampaign(p2)">
@@ -42,15 +44,15 @@
                     <div class="col-33 campaign-col"  ng-href="data[0].MAA_Campaignlength > $index + 1" ng-init="p3 = data[0].MAA_Campaign[$index + 2]"><img src="img/maa-faded.jpg" ng-src="https://uat.muslimaid.org.au/{{p3.Campaign25AppImage.replace('~', '')}}" width="96px" height="96px" ng-click="showCampaign(p3)">
                     </div>
                 </div>-->
-                                    <img src="img/maa-faded.jpg" ng-src="https://uat.muslimaid.org.au/{{product.Campaign25AppImage.replace('~', '')}}" ng-click="showCampaign(product)"></div>
+                                    <img src="img/maa-faded.jpg" ng-src="https://uat.muslimaid.org.au/{{product.CampaignThumbnail.replace('~', '')}}" ng-click="showCampaign(product)"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col col-12" style="margin-top: 10px">
+                <div class="row" ng-hide="spinner">
+                    <div class="col col-12 text-center" style="margin-top: 10px">
                         <!--<div ng-repeat="product in data[0].MAA_Campaign | filter: {DocumentName :'Where Most Needed'}">-->
-                        <a ng-click="expressDonateCamp({{data[1].MAA_Program[0].ProgramDefaultProject}})" class="button button-block button-donate-where">DONATE WHERE MOST NEEDED</a>
+                        <a ng-click="expressDonateCamp(data[1].MAA_Program[0].ProgramDefaultProject)" class="button button-block button-donate-where">DONATE WHERE MOST NEEDED</a>
                         <!--</div>-->
                     </div>
                 </div>

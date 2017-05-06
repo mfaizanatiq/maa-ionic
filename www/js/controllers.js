@@ -41,8 +41,11 @@ angular.module('starter.controllers', [])
     $scope.removeProjects = [28, 27, 517];
     $scope.spinner = true;
     apiTesting.get_maa.get().$promise.then(function (data) {
-      $scope.programs = data.cms_documents[2].MAA_Program;
-      $scope.programs[0].image = 'img/MAA-Icons-RGB_2016_Emergency_OR.png';
+      //console.log(data.cms_documents[0]);
+      $scope.programs = data.cms_documents[0].MAA_Program;
+      //console.log(data.cms_documents[1]);
+      
+     /* $scope.programs[0].image = 'img/MAA-Icons-RGB_2016_Emergency_OR.png';
       $scope.programs[1].image = 'img/MAA-Icons-RGB_2016_Food_OO.png';
       $scope.programs[2].image = 'img/MAA-Icons-RGB_2016_Orphan_OP.png';
       $scope.programs[3].image = 'img/MAA-Icons-RGB_2016_Ramadan_OG.png';
@@ -53,7 +56,7 @@ angular.module('starter.controllers', [])
       $scope.programs[8].image = 'img/MAA-Icons-RGB_2016_Education_OB.png';
       $scope.programs[9].image = 'img/MAA-Icons-RGB_2016_Shelter_OB.png';
       $scope.programs[10].image = 'img/MAA-Icons-RGB_2016_Sustainability_OG.png';
-      $scope.programs[11].image = 'img/MAA-Icons-RGB_2016_Waqf_OY.png';
+      $scope.programs[11].image = 'img/MAA-Icons-RGB_2016_Waqf_OY.png';*/
 
       //Remove unwanted projects
       for (i = 0; i <= $scope.programs.length - 1; i++) {
@@ -329,6 +332,7 @@ angular.module('starter.controllers', [])
   .controller('ProjCtrl', function ($scope, $cordovaInAppBrowser, $ionicModal, $timeout, $stateParams, $http, apiTesting) {
     console.log('Project Controller');
     $scope.spinner = true;
+    $scope.ProgramDefaultProject="0";
     var currentAllias = $stateParams.projName;
     $scope.currentProgram = currentAllias;
     /*apiTesting.get_maa.get().$promise.then(function(data) {
@@ -355,11 +359,10 @@ angular.module('starter.controllers', [])
       
       angular.forEach($scope.hello, function (value, key) {
         $scope.data = value;
-        
       });
-  //    alert($scope.data[1].MAA_Program[0].ProgramDefaultProject);
-//alert($scope.data[1].MAA_Program[0].ProgramDescription);
       
+      //$scope.ProgramDefaultProject = $scope.data[1].MAA_Program[0].ProgramDefaultProject;      
+     // alert($scope.ProgramDefaultProject);
     }, function errorCallback(response) {
       // called asynchronously if an error occurs
       // or server returns response with an error status.
@@ -396,14 +399,13 @@ angular.module('starter.controllers', [])
     };
 
     $scope.expressDonateCamp = function (nodeID) {
-//alert($scope.data[1].MAA_Program[0].ProgramDefaultProject);
       var options = {
         location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
       };
 
-      $cordovaInAppBrowser.open('http://uat.muslimaid.org.au/donate-now?&campaign=' + $scope.data[1].MAA_Program[0].ProgramDefaultProject, '_blank', options)
+      $cordovaInAppBrowser.open('http://uat.muslimaid.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
@@ -498,15 +500,13 @@ angular.module('starter.controllers', [])
     };
 
     $scope.expressDonateLocCamp = function (nodeID) {
-
-
       var options = {
         location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
       };
 
-      $cordovaInAppBrowser.open('http://uat.local.muslimaid.org.au/donate-now?&campaign=' + $scope.data[1].MAA_Program[0].ProgramDefaultProject, '_blank', options)
+      $cordovaInAppBrowser.open('http://uat.local.muslimaid.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
