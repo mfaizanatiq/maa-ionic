@@ -27,6 +27,9 @@
     <div class="row">
         <div class="col-100 mid-col">
             <ion-spinner ng-show="spinner"></ion-spinner>
+                                <div class="col col-12" style="margin-top: 10px" >
+            <h4>Campaigns</h4>
+        </div>
             <div  ng-repeat="product in data[0].MAA_Campaign">
                 <div class="row" ng-if="$index % 3 === 0" >
                     <div  class="col-33 campaign-col"  ng-init="p1 = data[0].MAA_Campaign[$index]" ><img src="img/maa-faded.jpg" ng-src="https://uat.muslimaid.org.au/{{p1.Campaign25AppImage.replace('~', '')}}" width="96px" height="96px" ng-click="showCampaign(p1)"></div>
@@ -41,7 +44,7 @@
 
     <div class="row">
              <div class="col-md-12 mid-col" style="margin-top: 10px" >
-                  <a ng-click="expressDonateLocCamp('634')" class="button button-block button-donate-where">DONATE WHERE MOST NEEDED</a>
+                  <a ng-click="expressDonateLocCamp({{product.DocumentID}})" class="button button-block button-donate-where">DONATE WHERE MOST NEEDED</a>
               </div>
     </div>
     </ion-content>

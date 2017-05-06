@@ -37,7 +37,7 @@ angular.module('starter.controllers', [])
   })
 
   .controller('IntCtrl', function ($scope, $ionicModal, $ionicPopover, $cordovaInAppBrowser, $timeout, $location, apiTesting, $ionicScrollDelegate) {
-    console.log('internation Controller');
+    console.log('international Controller');
     $scope.removeProjects = [28, 27, 517];
     $scope.spinner = true;
     apiTesting.get_maa.get().$promise.then(function (data) {
@@ -339,6 +339,7 @@ angular.module('starter.controllers', [])
                 }
             });
     });*/
+    //alert($stateParams.projName);
     $http({
       method: "GET",
       url: 'http://uat.muslimaid.org.au/rest/content/currentsite/defaultculture/all/our-projects/' + currentAllias + '?format=json&hash=62b48041372be811fdbd0ed260d0858439f28005f7931a44ed64f54763f7044f',
@@ -351,14 +352,20 @@ angular.module('starter.controllers', [])
       console.log(response);
       $scope.spinner = false;
       $scope.hello = response.data;
+      
       angular.forEach($scope.hello, function (value, key) {
         $scope.data = value;
+        
       });
+  //    alert($scope.data[1].MAA_Program[0].ProgramDefaultProject);
+//alert($scope.data[1].MAA_Program[0].ProgramDescription);
+      
     }, function errorCallback(response) {
       // called asynchronously if an error occurs
       // or server returns response with an error status.
       console.log(response);
     });
+
 
     $scope.readfull = true;
     $scope.readless = false;
@@ -389,16 +396,14 @@ angular.module('starter.controllers', [])
     };
 
     $scope.expressDonateCamp = function (nodeID) {
-
-
-
+//alert($scope.data[1].MAA_Program[0].ProgramDefaultProject);
       var options = {
         location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
       };
 
-      $cordovaInAppBrowser.open('http://uat.muslimaid.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
+      $cordovaInAppBrowser.open('http://uat.muslimaid.org.au/donate-now?&campaign=' + $scope.data[1].MAA_Program[0].ProgramDefaultProject, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
@@ -501,7 +506,7 @@ angular.module('starter.controllers', [])
         toolbar: 'yes'
       };
 
-      $cordovaInAppBrowser.open('http://uat.local.muslimaid.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
+      $cordovaInAppBrowser.open('http://uat.local.muslimaid.org.au/donate-now?&campaign=' + $scope.data[1].MAA_Program[0].ProgramDefaultProject, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
