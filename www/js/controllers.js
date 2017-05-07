@@ -500,6 +500,7 @@ angular.module('starter.controllers', [])
     };
 
     $scope.expressDonateLocCamp = function (nodeID) {
+      //alert(nodeID);
       var options = {
         location: 'yes',
         clearcache: 'yes',
