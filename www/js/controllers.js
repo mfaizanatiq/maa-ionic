@@ -185,8 +185,8 @@ angular.module('starter.controllers', [])
     $scope.removeProjects = [27, 28, 622, 623, 650];
     $scope.spinner = true;
     apiTesting.get_maa_local.get().$promise.then(function (data) {
-      $scope.programs = data.cms_documents[2].MAA_Program;
-      $scope.programs[0].image = 'img/default.png';
+      $scope.programs = data.cms_documents[0].MAA_Program;
+      /*$scope.programs[0].image = 'img/default.png';
       $scope.programs[1].image = 'img/default.png';
       $scope.programs[2].image = 'img/MAA_Nationa_Icons_RGB_Aged Care_OP.png';
       $scope.programs[3].image = 'img/MAA_Nationa_Icons_RGB_Community Education_OP.png';
@@ -197,7 +197,7 @@ angular.module('starter.controllers', [])
       $scope.programs[8].image = 'img/MAA_Nationa_Icons_RGB_Special Needs_BB.png';
       $scope.programs[9].image = 'img/MAA_Nationa_Icons_RGB_Sustainable Development_OG.png';
       $scope.programs[10].image = 'img/MAA_Nationa_Icons_RGB_Youth Development_OY.png';
-      $scope.programs[11].image = 'img/MAA_Nationa_Icons_RGB_Emergency_OR.png';
+      $scope.programs[11].image = 'img/MAA_Nationa_Icons_RGB_Emergency_OR.png';*/
 
       //Remove unwanted projects
       $scope.programs.splice(0, 2);
