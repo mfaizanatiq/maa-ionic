@@ -278,7 +278,7 @@ angular.module('starter.controllers', [])
         clearcache: 'yes',
         toolbar: 'yes'
       };
-      $cordovaInAppBrowser.open('https://uat.muslimaid.org.au/donor-portal/edit-account', '_blank', options)
+      $cordovaInAppBrowser.open('https://uat.local.muslimaid.org.au/donor-portal/edit-account', '_blank', options)
         //$cordovaInAppBrowser.open('https://uat.local.muslimaid.org.au/sign-in-register','_blank', options)
         .then(function (event) {
           // success
@@ -300,7 +300,7 @@ angular.module('starter.controllers', [])
         clearcache: 'yes',
         toolbar: 'yes'
       };
-      $cordovaInAppBrowser.open('https://uat.muslimaid.org.au/donate-now/your-donation-summary', '_blank', options)
+      $cordovaInAppBrowser.open('https://uat.local.muslimaid.org.au/donate-now/your-donation-summary', '_blank', options)
         //$cordovaInAppBrowser.open('https://uat.local.muslimaid.org.au/sign-in-register','_blank', options)
         .then(function (event) {
           // success
