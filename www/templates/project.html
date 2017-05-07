@@ -36,7 +36,7 @@
                         </div>
                         <div class="row">
                             <div style="width:100%;min-width:330px;overflow:hidden;">
-                                <div class="campaign-col" ng-repeat="product in data[0].MAA_Campaign| orderBy: 'NodeOrder' | filter: {Published:'1'} track by $index  ">
+                                <div class="campaign-col" ng-repeat="product in data[0].MAA_Campaign| orderBy: 'NodeOrder' | filter: {CampaignIsPublished:'true'} track by $index  ">
                                     <!--<div class="row" ng-if="$index % 3 === 0" >
                     <div  class="col-33 campaign-col"  ng-init="p1 = data[0].MAA_Campaign[$index]" ><img src="img/maa-faded.jpg" ng-src="https://uat.muslimaid.org.au/{{p1.Campaign25AppImage.replace('~', '')}}" width="96px" height="96px" ng-click="showCampaign(p1)"></div>
                     <div class="col-33 campaign-col"  ng-href="data[0].MAA_Campaign.length > $index + 1" ng-init="p2 = data[0].MAA_Campaign[$index + 1]" ><img src="img/maa-faded.jpg" ng-src="https://uat.muslimaid.org.au/{{p2.Campaign25AppImage.replace('~', '')}}" width="96px" height="96px" ng-click="showCampaign(p2)">

@@ -22,7 +22,7 @@
                         <h1 class="donation-heading">30 </h1>
                     </div>
                     <div class="col-md-6 express-donation">
-                        <p >Seconds<br>Express Donation</p>
+                        <p class="expDonSec">Seconds<br>Express Donation</p>
                     </div>
                 </div>
                 <div class="row">
@@ -30,7 +30,7 @@
                         <div class="list label-donate">
                             <label class="item item-input item-input-dollar">
                         <span class="input-label input-dollar">$</span>
-                        <input ng-model="donation.amount" type="text" placeholder="Donation Amount">
+                        <input ng-model="donation.amount" type="number"  min="0" placeholder="Donation Amount">
                         </label>
                         </div>
                     </div>
