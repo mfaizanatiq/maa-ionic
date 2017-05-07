@@ -72,6 +72,21 @@ color:#485f0f;
 
 }
 
+.project-region{
+    margin-top:70px;
+}
+
+@media screen and (max-width: 380px) {
+    .logo-row{
+        width:80%;
+        margin-left: auto;
+        margin-right:auto;
+    }
+    .project-region{
+    margin-top:30px;
+}
+}
+
 .img-or{
     width: 90%;
     display: block;
