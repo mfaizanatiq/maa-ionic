@@ -354,13 +354,12 @@ angular.module('starter.controllers', [])
       }
     }).then(function successCallback(response) {
       console.log(response);
-      $scope.spinner = false;
       $scope.hello = response.data;
-      
       angular.forEach($scope.hello, function (value, key) {
         $scope.data = value;
+            
       });
-      
+      $scope.spinner = false;  
       //$scope.ProgramDefaultProject = $scope.data[1].MAA_Program[0].ProgramDefaultProject;      
      // alert($scope.ProgramDefaultProject);
     }, function errorCallback(response) {
@@ -460,11 +459,14 @@ angular.module('starter.controllers', [])
       }
     }).then(function successCallback(response) {
       console.log(response);
-      $scope.spinner = false;
+      
       $scope.hello = response.data;
       angular.forEach($scope.hello, function (value, key) {
-        $scope.data = value;
-      });
+      $scope.data = value;
+      
+    });
+    //alert($scope.data.length);
+    $scope.spinner = false;
     }, function errorCallback(response) {
       // called asynchronously if an error occurs
       // or server returns response with an error status.
