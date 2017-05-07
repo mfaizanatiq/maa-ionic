@@ -83,7 +83,7 @@
                         </div>
                     </div>-->
 
-<div class="program-item" ng-repeat="product in programs track by $index">
+<div class="program-item shadow" ng-repeat="product in programs track by $index">
 <div class="col-md-4 " ng-init="p1 = programs[$index]" ng-click="go('/project/{{p1.NodeAlias}}')">
                             <div class="item-projects">
                                 <img ng-src="{{p1.image}}" width="96px" height="96px">
