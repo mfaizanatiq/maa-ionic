@@ -227,7 +227,7 @@ angular.module('starter.controllers', [])
         toolbar: 'yes'
       };
 
-      $cordovaInAppBrowser.open('http://uat.local.muslimaid.org.au/donate-now?campaign=201&amount=' + $scope.donation.amount, '_blank', options)
+      $cordovaInAppBrowser.open('http://uat.local.muslimaid.org.au/donate-now?campaign=634&amount=' + $scope.donation.amount, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
