@@ -2,7 +2,7 @@ angular.module('starter.controllers', [])
 
   .controller('HomeCtrl', function ($scope, $cordovaInAppBrowser, $timeout, $cordovaProgress, $cordovaSpinnerDialog, $rootScope, $ionicLoading, $ionicModal, $timeout) {
     var options = {
-      location: 'no',
+      location: 'yes',
       clearcache: 'yes',
       toolbar: 'yes'
     };
@@ -81,7 +81,7 @@ angular.module('starter.controllers', [])
     $scope.expressDonate = function () {
 
       var options = {
-        location: 'no',
+        location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
       };
@@ -130,10 +130,32 @@ angular.module('starter.controllers', [])
         });
 
     };
+
+//Open an In-App browser with a link as parameter  
+$scope.openBrowserlink = function (nodeID) {
+//alert(nodeID);
+      var options = {
+        location: 'yes',
+        clearcache: 'yes',
+        toolbar: 'yes'
+      };
+
+      $cordovaInAppBrowser.open(nodeID, '_blank', options)
+        .then(function (event) {
+          // success
+          $scope.donation.amount = 0;
+        })
+        .catch(function (event) {
+          // error
+        });
+
+    };
+
+
    //User Account Settings
     $scope.myAccount = function () {
       var options = {
-        location: 'no',
+        location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
       };
@@ -153,7 +175,7 @@ angular.module('starter.controllers', [])
     $scope.donationSummary = function () {
 
       var options = {
-        location: 'no',
+        location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
       };
@@ -168,6 +190,9 @@ angular.module('starter.controllers', [])
         });
 
     };
+
+
+
 
     //Scroll To a section
     $scope.scrollTo = function (target) {
@@ -222,7 +247,7 @@ angular.module('starter.controllers', [])
     $scope.expressDonate = function () {
 
       var options = {
-        location: 'no',
+        location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
       };
@@ -271,10 +296,30 @@ angular.module('starter.controllers', [])
 
     };
 
+//Open an In-App browser with a link as parameter  
+$scope.openBrowserlink = function (nodeID) {
+//alert(nodeID);
+      var options = {
+        location: 'yes',
+        clearcache: 'yes',
+        toolbar: 'yes'
+      };
+
+      $cordovaInAppBrowser.open(nodeID, '_blank', options)
+        .then(function (event) {
+          // success
+          $scope.donation.amount = 0;
+        })
+        .catch(function (event) {
+          // error
+        });
+
+    };
+
     //User Account Settings
     $scope.myAccount = function () {
       var options = {
-        location: 'no',
+        location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
       };
@@ -296,7 +341,7 @@ angular.module('starter.controllers', [])
     $scope.donationSummary = function () {
 
       var options = {
-        location: 'no',
+        location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
       };
@@ -538,6 +583,25 @@ angular.module('starter.controllers', [])
       $scope.readfull = true;
     };
 
+//Open an In-App browser with a link as parameter  
+$scope.openBrowserlink = function (nodeID) {
+//alert(nodeID);
+      var options = {
+        location: 'yes',
+        clearcache: 'yes',
+        toolbar: 'yes'
+      };
+
+      $cordovaInAppBrowser.open(nodeID, '_blank', options)
+        .then(function (event) {
+          // success
+          $scope.donation.amount = 0;
+        })
+        .catch(function (event) {
+          // error
+        });
+
+    };
 
 
 
@@ -557,10 +621,29 @@ angular.module('starter.controllers', [])
     $scope.closePopover = function ($event) {
       $scope.popover.hide($event);
     };
+//Open an In-App browser with a link as parameter  
+$scope.openBrowserlink = function (nodeID) {
+//alert(nodeID);
+      var options = {
+        location: 'yes',
+        clearcache: 'yes',
+        toolbar: 'yes'
+      };
+
+      $cordovaInAppBrowser.open(nodeID, '_blank', options)
+        .then(function (event) {
+          // success
+          $scope.donation.amount = 0;
+        })
+        .catch(function (event) {
+          // error
+        });
+
+    };
 
     $scope.myAccount = function () {
       var options = {
-        location: 'no',
+        location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
       };
