@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-  .controller('HomeCtrl', function ($scope, $cordovaInAppBrowser, $timeout, $cordovaProgress, $cordovaSpinnerDialog, $rootScope, $ionicLoading, $ionicModal, $timeout) {
+  .controller('HomeCtrl', function ($scope, $cordovaInAppBrowser, $timeout, $cordovaProgress, $cordovaSpinnerDialog, $rootScope, $ionicLoading, $ionicModal) {
     var options = {
       location: 'yes',
       clearcache: 'yes',
