@@ -74,7 +74,7 @@ angular.module('starter.controllers', [])
       $location.path(path);
     };
 
-    $scope.phoneNumber = "tel:+1-1800-555-5555";
+    $scope.phoneNumber = "tel:+61280169500";
 
     $scope.donation = {};
 
@@ -240,7 +240,7 @@ $scope.openBrowserlink = function (nodeID) {
       $location.path(path);
     };
 
-    $scope.phoneNumber = "tel:+1-1800-555-5555";
+    $scope.phoneNumber = "tel:+61280169500";
 
     $scope.donation = {};
 
