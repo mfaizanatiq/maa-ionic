@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.maa.muslimaidaus" version="3.0.18" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>maa</name>
-  <description>
-        Muslim Aid Australia Mobile Application allows user to support projects in over 50 countries spanning Africa, Asia, and Europe.
+<widget id="com.maa.muslimaidaus" version="3.0.19" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Muslim Aid Australia</name>
+  <description>&#xD;
+        Muslim Aid Australia Mobile Application allows user to support projects in over 50 countries spanning Africa, Asia, and Europe.&#xD;
     </description>
-  <author email="you@example.com" href="http://example.com/">
-      Muslim Aid Australia
+  <author email="it@muslimaid.org.au" href="muslimaid.org.au">&#xD;
+      Muslim Aid Australia&#xD;
     </author>
   <content src="index.html"/>
   <access origin="*"/>
@@ -16,6 +16,7 @@
   <access origin="market:*" launch-external="yes"/>
   <allow-navigation href="*"/>
   <allow-navigation href="http://192.168.2.217:8100"/>
+  <allow-navigation href="http://192.168.10.36:8100"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
