@@ -10,7 +10,7 @@ angular.module('starter.controllers', [])
     $scope.openBrowser = function () {
 
 
-      $cordovaInAppBrowser.open('http://www.muslimaid.org.au/donate-now', '_blank', options).then(function () {
+      $cordovaInAppBrowser.open('https://www.muslimaid.org.au/donate-now', '_blank', options).then(function () {
 
       }, function (error) {
         console.log("Error: " + error);
@@ -36,42 +36,57 @@ angular.module('starter.controllers', [])
 
   })
 
-  .controller('IntCtrl', function ($scope, $ionicModal, $ionicPopover, $cordovaInAppBrowser, $timeout, $location, apiTesting, $ionicScrollDelegate) {
+  .controller('IntCtrl', function ($scope,$http, $ionicModal, $ionicPopover, $cordovaInAppBrowser, $timeout, $location, apiTesting, $ionicScrollDelegate) {
     console.log('international Controller');
-    $scope.removeProjects = [28, 27, 517];
+    $scope.removeProjects = [27,622,623,28,517];
     $scope.spinner = true;
-    apiTesting.get_maa.get().$promise.then(function (data) {
+   /* apiTesting.get_maa.get().$promise.then(function (data) {
       //console.log(data.cms_documents[0]);
+
       $scope.programs = data.cms_documents[0].MAA_Program;
       //console.log(data.cms_documents[1]);
       
-     /* $scope.programs[0].image = 'img/MAA-Icons-RGB_2016_Emergency_OR.png';
-      $scope.programs[1].image = 'img/MAA-Icons-RGB_2016_Food_OO.png';
-      $scope.programs[2].image = 'img/MAA-Icons-RGB_2016_Orphan_OP.png';
-      $scope.programs[3].image = 'img/MAA-Icons-RGB_2016_Ramadan_OG.png';
-      $scope.programs[4].image = 'img/MAA-Icons-RGB_2016_Qurban_OB.png';
-      $scope.programs[5].image = 'img/MAA-Icons-RGB_2016_Aqiqah_BP.png';
-      $scope.programs[6].image = 'img/MAA-Icons-RGB_2016_Water_OB.png';
-      $scope.programs[7].image = 'img/MAA-Icons-RGB_2016_Health_OP.png';
-      $scope.programs[8].image = 'img/MAA-Icons-RGB_2016_Education_OB.png';
-      $scope.programs[9].image = 'img/MAA-Icons-RGB_2016_Shelter_OB.png';
-      $scope.programs[10].image = 'img/MAA-Icons-RGB_2016_Sustainability_OG.png';
-      $scope.programs[11].image = 'img/MAA-Icons-RGB_2016_Waqf_OY.png';*/
-
+     
       //Remove unwanted projects
+      
+
+
+
+    });*/
+
+//Requesting Projects
+$http({
+      method: "GET",
+      url: 'https://www.muslimaid.org.au/rest/content/currentsite/defaultculture/childrenof/our-projects?classnames=MAA.Program&columns=DocumentID,DocumentName,NodeAlias,NodeOrder,Program25AppIcon,Published&format=json',
+      headers: {
+        'Accept': 'application/json',
+        "ContentType": "application/json; charset=utf-8",
+        "authorization": "Basic bW9iaWxlYXBwdXNlckBtdXNsaW1haWQub3JnLmF1OmQkOSZ0QldBOFV3dkp6VQ==",
+      }
+    }).then(function successCallback(response) {
+      console.log(response);
+      $scope.programs = response.data.cms_documents[0].MAA_Program;
+      var removeProjects__Index=[];
       for (i = 0; i <= $scope.programs.length - 1; i++) {
         if ($scope.removeProjects.indexOf($scope.programs[i].DocumentID) != -1) {
-          // alert('found ' + $scope.programs[i].DocumentID);
-          $scope.programs.splice(i, i);
+          //$scope.programs.splice(i, i);
+          removeProjects__Index.push(i);
+          //alert('found ' + $scope.programs[i].DocumentID+ ' '+ $scope.programs.length);          
         }
       }
 
-      console.log($scope.programs);
-      $scope.spinner = false;
-    });
-    $scope.test = 'Global'
+$scope.programs = $scope.programs.filter(function(value, index) {
+     return removeProjects__Index.indexOf(index) == -1;
+})
+      
+
+       $scope.spinner = false;
+     },function errorCallback(response){
+       console.log(response);
+     });
+
     $scope.go = function (path) {
-      $location.path(path);
+     $location.path(path);
     };
 
     $scope.phoneNumber = "tel:+61280169500";
@@ -86,7 +101,7 @@ angular.module('starter.controllers', [])
         toolbar: 'yes'
       };
 
-      $cordovaInAppBrowser.open('http://muslimaid.org.au/donate-now?campaign=201&amount=' + $scope.donation.amount, '_blank', options)
+      $cordovaInAppBrowser.open('https://www.muslimaid.org.au/donate-now?campaign=201&amount=' + $scope.donation.amount, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
@@ -120,7 +135,7 @@ angular.module('starter.controllers', [])
         toolbar: 'yes'
       };
 
-      $cordovaInAppBrowser.open('http://muslimaid.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
+      $cordovaInAppBrowser.open('https://www.muslimaid.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
@@ -160,7 +175,7 @@ $scope.openBrowserlink = function (nodeID) {
         toolbar: 'yes'
       };
 
-      $cordovaInAppBrowser.open('https://muslimaid.org.au/donor-portal/edit-account', '_blank', options)
+      $cordovaInAppBrowser.open('https://www.muslimaid.org.au/donor-portal/edit-account', '_blank', options)
         //$cordovaInAppBrowser.open('https://uat.muslimaid.org.au/sign-in-register','_blank', options)
         .then(function (event) {
           // success
@@ -179,7 +194,7 @@ $scope.openBrowserlink = function (nodeID) {
         clearcache: 'yes',
         toolbar: 'yes'
       };
-      $cordovaInAppBrowser.open('https://muslimaid.org.au/donate-now/your-donation-summary', '_blank', options)
+      $cordovaInAppBrowser.open('https://www.muslimaid.org.au/donate-now/your-donation-summary', '_blank', options)
         //$cordovaInAppBrowser.open('https://uat.local.muslimaid.org.au/sign-in-register','_blank', options)
         .then(function (event) {
           // success
@@ -205,24 +220,12 @@ $scope.openBrowserlink = function (nodeID) {
     //$cordovaInAppBrowser.close();
   })
 
-  .controller('LocCtrl', function ($scope, $ionicModal, $ionicPopover, $cordovaInAppBrowser, $timeout, $location, apiTesting, $ionicScrollDelegate) {
+  .controller('LocCtrl', function ($scope, $ionicModal, $http, $ionicPopover, $cordovaInAppBrowser, $timeout, $location, apiTesting, $ionicScrollDelegate) {
     console.log('Local Controller');
     $scope.removeProjects = [27, 28, 622, 623, 650];
     $scope.spinner = true;
-    apiTesting.get_maa_local.get().$promise.then(function (data) {
+/*    apiTesting.get_maa_local.get().$promise.then(function (data) {
       $scope.programs = data.cms_documents[0].MAA_Program;
-      /*$scope.programs[0].image = 'img/default.png';
-      $scope.programs[1].image = 'img/default.png';
-      $scope.programs[2].image = 'img/MAA_Nationa_Icons_RGB_Aged Care_OP.png';
-      $scope.programs[3].image = 'img/MAA_Nationa_Icons_RGB_Community Education_OP.png';
-      $scope.programs[4].image = 'img/MAA_Nationa_Icons_RGB_Health_OB.png';
-      $scope.programs[5].image = 'img/MAA_Nationa_Icons_RGB_Emergency_OB.png';
-      $scope.programs[6].image = 'img/MAA_Nationa_Icons_RGB_Homeless Support_OB.png';
-      $scope.programs[7].image = 'img/MAA_Nationa_Icons_RGB_Indigenous_OB.png';
-      $scope.programs[8].image = 'img/MAA_Nationa_Icons_RGB_Special Needs_BB.png';
-      $scope.programs[9].image = 'img/MAA_Nationa_Icons_RGB_Sustainable Development_OG.png';
-      $scope.programs[10].image = 'img/MAA_Nationa_Icons_RGB_Youth Development_OY.png';
-      $scope.programs[11].image = 'img/MAA_Nationa_Icons_RGB_Emergency_OR.png';*/
 
       //Remove unwanted projects
       $scope.programs.splice(0, 2);
@@ -234,8 +237,42 @@ $scope.openBrowserlink = function (nodeID) {
       }
       console.log($scope.programs);
       $scope.spinner = false;
-    });
-    $scope.test = 'Global'
+    });*/
+
+//Requesting Projects
+$http({
+      method: "GET",
+      url: 'https://local.muslimaid.org.au/rest/content/currentsite/defaultculture/childrenof/our-projects?classnames=MAA.Program&columns=DocumentID,DocumentName,NodeAlias,NodeOrder,Program25AppIcon,Published&format=json',
+      headers: {
+        'Accept': 'application/json',
+        "ContentType": "application/json; charset=utf-8",
+        "authorization": "Basic bW9iaWxlYXBwdXNlckBtdXNsaW1haWQub3JnLmF1OmQkOSZ0QldBOFV3dkp6VQ==",
+      }
+    }).then(function successCallback(response) {
+      console.log(response);
+      $scope.programs = response.data.cms_documents[0].MAA_Program;
+      var removeProjects__Index=[];
+      for (i = 0; i <= $scope.programs.length - 1; i++) {
+        if ($scope.removeProjects.indexOf($scope.programs[i].DocumentID) != -1) {
+          //$scope.programs.splice(i, i);
+          removeProjects__Index.push(i);
+          //alert('found ' + $scope.programs[i].DocumentID+ ' '+ $scope.programs.length);          
+        }
+      }
+
+$scope.programs = $scope.programs.filter(function(value, index) {
+     return removeProjects__Index.indexOf(index) == -1;
+})
+      
+
+       $scope.spinner = false;
+     },function errorCallback(response){
+       console.log(response);
+     });
+
+
+
+    $scope.test = 'Local'
     $scope.go = function (path) {
       $location.path(path);
     };
@@ -252,7 +289,7 @@ $scope.openBrowserlink = function (nodeID) {
         toolbar: 'yes'
       };
 
-      $cordovaInAppBrowser.open('http://local.muslimaid.org.au/donate-now?campaign=634&amount=' + $scope.donation.amount, '_blank', options)
+      $cordovaInAppBrowser.open('https://local.muslimaid.org.au/donate-now?campaign=634&amount=' + $scope.donation.amount, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
@@ -285,7 +322,7 @@ $scope.openBrowserlink = function (nodeID) {
         toolbar: 'yes'
       };
 
-      $cordovaInAppBrowser.open('http://local.muslimaid.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
+      $cordovaInAppBrowser.open('https://local.muslimaid.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
@@ -387,15 +424,16 @@ $scope.openBrowserlink = function (nodeID) {
                 console.log(subVal.ProgramDescription)
                 }
             });
-    });*/
+    });
+    */
     //alert($stateParams.projName);
     $http({
       method: "GET",
-      url: 'http://uat.muslimaid.org.au/rest/content/currentsite/defaultculture/all/our-projects/' + currentAllias + '?format=json&hash=62b48041372be811fdbd0ed260d0858439f28005f7931a44ed64f54763f7044f',
+      url: 'https://www.muslimaid.org.au/rest/content/currentsite/defaultculture/all/our-projects/' + currentAllias + '?format=json',
       headers: {
         'Accept': 'application/json',
         "ContentType": "application/x-www-form-urlencoded",
-        "authorization": "Basic d2FrcWFzYWhtZWRAZ21haWwuY29tOmQkOSZ0QldBOFV3dkp6VQ==",
+        "authorization": "Basic bW9iaWxlYXBwdXNlckBtdXNsaW1haWQub3JnLmF1OmQkOSZ0QldBOFV3dkp6VQ==",
       }
     }).then(function successCallback(response) {
       console.log(response);
@@ -449,7 +487,7 @@ $scope.openBrowserlink = function (nodeID) {
         toolbar: 'yes'
       };
 
-      $cordovaInAppBrowser.open('http://muslimaid.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
+      $cordovaInAppBrowser.open('https://www.muslimaid.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
@@ -496,11 +534,11 @@ $scope.openBrowserlink = function (nodeID) {
     });*/
     $http({
       method: "GET",
-      url: 'http://uat.local.muslimaid.org.au/rest/content/currentsite/defaultculture/all/our-projects/' + currentAllias + '?format=json&hash=4ebd29d8d97fca7676fa6a45a5b2c0bf522aff3ddba68ec571dcd4b9fd836d99',
+      url: 'https://local.muslimaid.org.au/rest/content/currentsite/defaultculture/all/our-projects/' + currentAllias + '?format=json',
       headers: {
         'Accept': 'application/json',
         "ContentType": "application/x-www-form-urlencoded",
-        "authorization": "Basic d2FrcWFzYWhtZWRAZ21haWwuY29tOmQkOSZ0QldBOFV3dkp6VQ==",
+        "authorization": "Basic bW9iaWxlYXBwdXNlckBtdXNsaW1haWQub3JnLmF1OmQkOSZ0QldBOFV3dkp6VQ==",
       }
     }).then(function successCallback(response) {
       console.log(response);
@@ -554,7 +592,7 @@ $scope.openBrowserlink = function (nodeID) {
         toolbar: 'yes'
       };
 
-      $cordovaInAppBrowser.open('http://local.muslimaid.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
+      $cordovaInAppBrowser.open('https://local.muslimaid.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;

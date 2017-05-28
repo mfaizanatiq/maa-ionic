@@ -6,6 +6,7 @@
       <div class="row">
         <div class="col-md-12 mid-col camp-desc" >
       <h3>{{indexofCamp.DocumentName}}</h3>
+      
       <p style="margin-top: 10px" ng-bind-html="indexofCamp.Campaign25Description | limitTo:numLimitCamp"></p>
             <button ng-show="indexofCamp.Campaign25Description.length >= 100 && readfullCamp" type="button" class="button button-block button-readmore-camp" ng-click="readMoreCamp()">Read More <i class="ion-ios-arrow-down"></i></button>
             <button ng-if="indexofCamp.Campaign25Description.length >= 100 && readlessCamp" type="button" class="button button-block button-readmore-camp" ng-click="readLessCamp()">Read Less <i class="ion-ios-arrow-up"></i></button></p>

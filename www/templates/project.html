@@ -33,7 +33,7 @@
                         <div class="text-center" ng-show="spinner">
                             <ion-spinner></ion-spinner>
                         </div>
-                        <div class="col col-12" style="margin-top: 10px" ng-hide="spinner">
+                        <div class="col col-12" style="margin-top: 10px" ng-hide="spinner" ng-hide="data[0].MAA_Campaign.length<1">
                             <h4>Campaigns</h4>
                         </div>
                         <div class="row">
@@ -46,7 +46,7 @@
                     <div class="col-33 campaign-col"  ng-href="data[0].MAA_Campaignlength > $index + 1" ng-init="p3 = data[0].MAA_Campaign[$index + 2]"><img src="img/maa-faded.jpg" ng-src="https://uat.muslimaid.org.au/{{p3.Campaign25AppImage.replace('~', '')}}" width="96px" height="96px" ng-click="showCampaign(p3)">
                     </div>
                 </div>-->
-                                    <img src="img/maa-faded.jpg" ng-src="https://uat.muslimaid.org.au/{{product.CampaignThumbnail.replace('~', '')}}" ng-click="showCampaign(product)"></div>
+                                    <img src="img/maa-faded.jpg" ng-src="https://www.muslimaid.org.au/{{product.CampaignThumbnail.replace('~', '')}}" ng-click="showCampaign(product)"></div>
                             </div>
                         </div>
                     </div>
