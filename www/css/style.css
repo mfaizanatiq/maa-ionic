@@ -254,6 +254,10 @@ color:#485f0f;
     width:100vw;
 }
 
+.panelDescription h3{
+    color:#333;
+}
+
 .panelDescription p{
     -webkit-transition: all ease-out .15s;
     transition: all ease-out .15s;
@@ -294,9 +298,22 @@ color:#485f0f;
 
 .program-desc  h1,h2,h3,h4,h5,h6{
     font-family: 'museo sans 500';
-    color:#ffffff !important;
+    color:#333;
 }
 
+h3{
+    font-size:26px !important;
+}
+
+.camp-content > p h1,h2,h3,h4,h5,h6{
+  font-size:1rem;  
+}
+
+
+.camp-content  h1,h2,h3,h4,h5,h6{
+    font-family: 'museo sans 500';
+    color:#ffffff;
+}
 
 .camp-content{
      background-color: #44535D;
