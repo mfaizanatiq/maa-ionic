@@ -39,7 +39,7 @@
               
                 <div class="row">
                     <div style="width:100%;min-width:330px;overflow:hidden;">
-                        <div class="campaign-col" ng-repeat="product in data[0].MAA_Campaign | filter: {Published:'1'} track by $index">
+                        <div class="campaign-col" ng-repeat="product in data[0].MAA_Campaign | orderBy: 'NodeOrder' | filter: {Published:'1'} track by $index">
                             <img src="img/maa-faded.jpg" ng-src="https://local.muslimaid.org.au/{{product.CampaignThumbnail.replace('~', '')}}"
                                 ng-click="showCampaign(product)"></div>
                     </div>
