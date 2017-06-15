@@ -21,7 +21,8 @@
     "cordova-plugin-device",
     "cordova-plugin-splashscreen",
     "ionic-plugin-keyboard",
-    "cordova-plugin-inappbrowser@~1.7.0"
+    "cordova-plugin-inappbrowser@~1.7.0",
+    "onesignal-cordova-plugin"
   ],
   "cordovaPlatforms": [
     "ios",
