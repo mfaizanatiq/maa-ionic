@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.maa.muslimaidaus" version="3.2.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.maa.muslimaidaus" version="3.2.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>MuslimAid Aus</name>
-  <description>&#xD;
-        Muslim Aid Australia Mobile Application allows user to support projects in over 50 countries spanning Africa, Asia, and Europe.&#xD;
-    </description>
+  <description>MAA International Mobile Application allows user to support projects in over 50 countries spanning Africa, Asia, and Europe.</description>
   <author email="it@muslimaid.org.au" href="muslimaid.org.au">&#xD;
-      Muslim Aid Australia&#xD;
+      MAA International&#xD;
     </author>
   <content src="index.html"/>
   <access origin="*"/>

@@ -8,15 +8,16 @@ angular.module('starter.controllers', [])
     };
 
     $scope.openBrowser = function () {
+var link='https://www.maainternational.org.au/donate-now';
+window.open(link,'_system');
 
-
-      $cordovaInAppBrowser.open('https://www.muslimaid.org.au/donate-now', '_blank', options).then(function () {
+     /* $cordovaInAppBrowser.open('https://www.maainternational.org.au/donate-now', '_blank', options).then(function () {
 
       }, function (error) {
         console.log("Error: " + error);
-      });
+      });*/
 
-      $rootScope.$on('$cordovaInAppBrowser:loadstart', function (e, event) {
+    /*  $rootScope.$on('$cordovaInAppBrowser:loadstart', function (e, event) {
         // $cordovaProgress.showDeterminateWithLabel(true, 50000, "Loading")
         //$cordovaSpinnerDialog.show("title","message", true);
 
@@ -29,7 +30,7 @@ angular.module('starter.controllers', [])
       });
       $rootScope.$on('$cordovaInAppBrowser:exit', function (e, event) {
         //alert('exit');
-      });
+      });*/
 
     }
 
@@ -57,7 +58,7 @@ angular.module('starter.controllers', [])
 //Requesting Projects
 $http({
       method: "GET",
-      url: 'https://www.muslimaid.org.au/rest/content/currentsite/defaultculture/childrenof/our-projects?classnames=MAA.Program&columns=DocumentID,DocumentName,NodeAlias,NodeOrder,Program25AppIcon,Published&format=json',
+      url: 'https://www.maainternational.org.au/rest/content/currentsite/defaultculture/childrenof/our-projects?classnames=MAA.Program&columns=DocumentID,DocumentName,NodeAlias,NodeOrder,Program25AppIcon,Published&format=json',
       headers: {
         'Accept': 'application/json',
         "ContentType": "application/json; charset=utf-8",
@@ -95,20 +96,22 @@ $scope.programs = $scope.programs.filter(function(value, index) {
 
     $scope.expressDonate = function () {
 
-      var options = {
+      /*var options = {
         location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
-      };
+      };*/
+var link='https://www.maainternational.org.au/donate-now?campaign=201&amount=' + $scope.donation.amount;
+window.open(link,'_system');
 
-      $cordovaInAppBrowser.open('https://www.muslimaid.org.au/donate-now?campaign=201&amount=' + $scope.donation.amount, '_blank', options)
+      /*$cordovaInAppBrowser.open('https://www.maainternational.org.au/donate-now?campaign=201&amount=' + $scope.donation.amount, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
         })
         .catch(function (event) {
           // error
-        });
+        });*/
 
     };
 
@@ -129,31 +132,37 @@ $scope.programs = $scope.programs.filter(function(value, index) {
     $scope.expressDonateCamp = function (nodeID) {
 
 
-      var options = {
+      /*var options = {
         location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
-      };
+      };*/
 
-      $cordovaInAppBrowser.open('https://www.muslimaid.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
+var link='https://www.maainternational.org.au/donate-now?&campaign=' + nodeID;
+window.open(link,'_system');
+
+     /* $cordovaInAppBrowser.open('https://www.maainternational.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
         })
         .catch(function (event) {
           // error
-        });
+        });*/
 
     };
 
 //Open an In-App browser with a link as parameter  
 $scope.openBrowserlink = function (nodeID) {
 //alert(nodeID);
-      var options = {
+     var options = {
         location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
       };
+
+var link= nodeID;
+//window.open(link,'_system');
 
       $cordovaInAppBrowser.open(nodeID, '_blank', options)
         .then(function (event) {
@@ -169,13 +178,17 @@ $scope.openBrowserlink = function (nodeID) {
 
    //User Account Settings
     $scope.myAccount = function () {
-      var options = {
+      /*var options = {
         location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
-      };
+      };*/
 
-      $cordovaInAppBrowser.open('https://www.muslimaid.org.au/donor-portal/edit-account', '_blank', options)
+
+var link='https://www.maainternational.org.au/donor-portal/edit-account';
+window.open(link,'_system');
+
+     /* $cordovaInAppBrowser.open('https://www.maainternational.org.au/donor-portal/edit-account', '_blank', options)
         //$cordovaInAppBrowser.open('https://uat.muslimaid.org.au/sign-in-register','_blank', options)
         .then(function (event) {
           // success
@@ -183,26 +196,31 @@ $scope.openBrowserlink = function (nodeID) {
         })
         .catch(function (event) {
           // error
-        });
+        });*/
 
     };
     //Donation Summary
     $scope.donationSummary = function () {
 
-      var options = {
+      /*var options = {
         location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
-      };
-      $cordovaInAppBrowser.open('https://www.muslimaid.org.au/donate-now/your-donation-summary', '_blank', options)
-        //$cordovaInAppBrowser.open('https://uat.local.muslimaid.org.au/sign-in-register','_blank', options)
+      };*/
+
+var link='https://www.maainternational.org.au/donate-now/your-donation-summary';
+window.open(link,'_system');
+
+
+      /*$cordovaInAppBrowser.open('https://www.maainternational.org.au/donate-now/your-donation-summary', '_blank', options)
+        //$cordovaInAppBrowser.open('https://uat.www.maanational.org.au/sign-in-register','_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
         })
         .catch(function (event) {
           // error
-        });
+        });*/
 
     };
 
@@ -242,7 +260,7 @@ $scope.openBrowserlink = function (nodeID) {
 //Requesting Projects
 $http({
       method: "GET",
-      url: 'https://local.muslimaid.org.au/rest/content/currentsite/defaultculture/childrenof/our-projects?classnames=MAA.Program&columns=DocumentID,DocumentName,NodeAlias,NodeOrder,Program25AppIcon,Published&format=json',
+      url: 'https://www.maanational.org.au/rest/content/currentsite/defaultculture/childrenof/our-projects?classnames=MAA.Program&columns=DocumentID,DocumentName,NodeAlias,NodeOrder,Program25AppIcon,Published&format=json',
       headers: {
         'Accept': 'application/json',
         "ContentType": "application/json; charset=utf-8",
@@ -283,20 +301,24 @@ $scope.programs = $scope.programs.filter(function(value, index) {
 
     $scope.expressDonate = function () {
 
-      var options = {
+      /*var options = {
         location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
-      };
+      };*/
 
-      $cordovaInAppBrowser.open('https://local.muslimaid.org.au/donate-now?campaign=634&amount=' + $scope.donation.amount, '_blank', options)
+
+var link='https://www.maanational.org.au/donate-now?campaign=634&amount=' + $scope.donation.amount;
+window.open(link,'_system');
+
+      /*$cordovaInAppBrowser.open('https://www.maanational.org.au/donate-now?campaign=634&amount=' + $scope.donation.amount, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
         })
         .catch(function (event) {
           // error
-        });
+        });*/
 
     };
 
@@ -316,20 +338,24 @@ $scope.programs = $scope.programs.filter(function(value, index) {
 
     $scope.expressDonateLocCamp = function (nodeID) {
 
-      var options = {
+      /*var options = {
         location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
-      };
+      };*/
 
-      $cordovaInAppBrowser.open('https://local.muslimaid.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
+
+var link='https://www.maanational.org.au/donate-now?&campaign=' + nodeID;
+window.open(link,'_system');
+
+      /*$cordovaInAppBrowser.open('https://www.maanational.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
         })
         .catch(function (event) {
           // error
-        });
+        });*/
 
     };
 
@@ -341,8 +367,9 @@ $scope.openBrowserlink = function (nodeID) {
         clearcache: 'yes',
         toolbar: 'yes'
       };
-
-      $cordovaInAppBrowser.open(nodeID, '_blank', options)
+var link= nodeID;
+//window.open(link,'_system');
+      $cordovaInAppBrowser.open(link, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
@@ -355,20 +382,24 @@ $scope.openBrowserlink = function (nodeID) {
 
     //User Account Settings
     $scope.myAccount = function () {
-      var options = {
+      /*var options = {
         location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
-      };
-      $cordovaInAppBrowser.open('https://local.muslimaid.org.au/donor-portal/edit-account', '_blank', options)
-        //$cordovaInAppBrowser.open('https://uat.local.muslimaid.org.au/sign-in-register','_blank', options)
+      };*/
+
+var link= 'https://www.maanational.org.au/donor-portal/edit-account';
+window.open(link,'_system');
+
+      /*$cordovaInAppBrowser.open('https://www.maanational.org.au/donor-portal/edit-account', '_blank', options)
+        //$cordovaInAppBrowser.open('https://uat.www.maanational.org.au/sign-in-register','_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
         })
         .catch(function (event) {
           // error
-        });
+        });*/
 
     };
 
@@ -377,20 +408,24 @@ $scope.openBrowserlink = function (nodeID) {
     //Donation Summary
     $scope.donationSummary = function () {
 
-      var options = {
+      /*var options = {
         location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
-      };
-      $cordovaInAppBrowser.open('https://local.muslimaid.org.au/donate-now/your-donation-summary', '_blank', options)
-        //$cordovaInAppBrowser.open('https://uat.local.muslimaid.org.au/sign-in-register','_blank', options)
+      };*/
+
+var link= 'https://www.maanational.org.au/donate-now/your-donation-summary';
+window.open(link,'_system');
+
+      /*$cordovaInAppBrowser.open('https://www.maanational.org.au/donate-now/your-donation-summary', '_blank', options)
+        //$cordovaInAppBrowser.open('https://uat.www.maanational.org.au/sign-in-register','_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
         })
         .catch(function (event) {
           // error
-        });
+        });*/
 
     };
 
@@ -414,6 +449,8 @@ $scope.openBrowserlink = function (nodeID) {
   .controller('ProjCtrl', function ($scope, $cordovaInAppBrowser, $ionicModal, $timeout, $stateParams, $http, apiTesting) {
     console.log('Project Controller');
     $scope.spinner = true;
+    $scope.campaigns = null;
+    $scope.program = null;
     $scope.ProgramDefaultProject="0";
     var currentAllias = $stateParams.projName;
     $scope.currentProgram = currentAllias;
@@ -427,9 +464,11 @@ $scope.openBrowserlink = function (nodeID) {
     });
     */
     //alert($stateParams.projName);
+    //Get the Project Campaigns
     $http({
       method: "GET",
-      url: 'https://www.muslimaid.org.au/rest/content/currentsite/defaultculture/all/our-projects/' + currentAllias + '?format=json',
+      //url: 'https://www.maainternational.org.au/rest/content/currentsite/defaultculture/all/our-projects/' + currentAllias + '?format=json',
+      url: 'https://www.maainternational.org.au/rest/content/currentsite/defaultculture/all/our-projects/' + currentAllias + '?classnames=MAA.Campaign&columns=DocumentID,DocumentName,CampaignDescription,CampaignThumbnail,CampaignIsPublished&format=json',
       headers: {
         'Accept': 'application/json',
         "ContentType": "application/x-www-form-urlencoded",
@@ -437,10 +476,10 @@ $scope.openBrowserlink = function (nodeID) {
       }
     }).then(function successCallback(response) {
       console.log(response);
-      $scope.hello = response.data;
-      angular.forEach($scope.hello, function (value, key) {
-        $scope.data = value;
-            
+      $scope.data = response.data;
+      angular.forEach($scope.data, function (value, key) {
+        //$scope.data = value;
+        $scope.campaigns = value;
       });
       $scope.spinner = false;  
       //$scope.ProgramDefaultProject = $scope.data[1].MAA_Program[0].ProgramDefaultProject;      
@@ -451,6 +490,32 @@ $scope.openBrowserlink = function (nodeID) {
       console.log(response);
     });
 
+//Getting Program Details
+$http({
+  method: "GET",
+  //url: 'https://www.maainternational.org.au/rest/content/currentsite/defaultculture/all/our-projects/' + currentAllias + '?format=json',
+  url: 'https://www.maainternational.org.au/rest/content/currentsite/defaultculture/all/our-projects/'+currentAllias+'?classnames=MAA.Program&columns=DocumentName,ProgramDescription,Published,ProgramDefaultProject&format=json',
+  headers: {
+    'Accept': 'application/json',
+    "ContentType": "application/x-www-form-urlencoded",
+    "authorization": "Basic bW9iaWxlYXBwdXNlckBtdXNsaW1haWQub3JnLmF1OmQkOSZ0QldBOFV3dkp6VQ==",
+  }
+}).then(function successCallback(response) {
+  console.log(response);
+  $scope.data = response.data;
+  angular.forEach($scope.data, function (value, key) {
+    //$scope.data = value;
+    $scope.program = value;
+  });
+//Get the Project Details
+  $scope.spinner = false;  
+  //$scope.ProgramDefaultProject = $scope.data[1].MAA_Program[0].ProgramDefaultProject;      
+ // alert($scope.ProgramDefaultProject);
+}, function errorCallback(response) {
+  // called asynchronously if an error occurs
+  // or server returns response with an error status.
+  console.log(response);
+});
 
     $scope.readfull = true;
     $scope.readless = false;
@@ -481,20 +546,25 @@ $scope.openBrowserlink = function (nodeID) {
     };
 
     $scope.expressDonateCamp = function (nodeID) {
-      var options = {
+      /*var options = {
         location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
-      };
+      };*/
 
-      $cordovaInAppBrowser.open('https://www.muslimaid.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
+
+var link= 'https://www.maainternational.org.au/donate-now?&campaign=' + nodeID;
+window.open(link,'_system');
+
+
+      /*$cordovaInAppBrowser.open('https://www.maainternational.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
         })
         .catch(function (event) {
           // error
-        });
+        });*/
 
     };
 
@@ -522,6 +592,8 @@ $scope.openBrowserlink = function (nodeID) {
   .controller('LocProjCtrl', function ($scope, $ionicModal, $cordovaInAppBrowser, $timeout, $stateParams, $http, apiTesting) {
     console.log('Local Project Controller');
     $scope.spinner = true;
+    $scope.campaigns = null;
+    $scope.program = null;
     var currentAllias = $stateParams.projName;
     $scope.currentProgram = currentAllias;
     /*apiTesting.get_maa.get().$promise.then(function(data) {
@@ -532,9 +604,12 @@ $scope.openBrowserlink = function (nodeID) {
                 }
             });
     });*/
+
+    //Getting Local Campaigns
     $http({
       method: "GET",
-      url: 'https://local.muslimaid.org.au/rest/content/currentsite/defaultculture/all/our-projects/' + currentAllias + '?format=json',
+      //url: 'https://www.maanational.org.au/rest/content/currentsite/defaultculture/all/our-projects/' + currentAllias + '?format=json',
+      url: 'https://www.maanational.org.au/rest/content/currentsite/defaultculture/all/our-projects/' + currentAllias + '?classnames=MAA.Campaign&columns=DocumentID,DocumentName,CampaignDescription,CampaignThumbnail,CampaignIsPublished&format=json',
       headers: {
         'Accept': 'application/json',
         "ContentType": "application/x-www-form-urlencoded",
@@ -543,9 +618,9 @@ $scope.openBrowserlink = function (nodeID) {
     }).then(function successCallback(response) {
       console.log(response);
       
-      $scope.hello = response.data;
-      angular.forEach($scope.hello, function (value, key) {
-      $scope.data = value;
+      $scope.data= response.data;
+      angular.forEach($scope.data, function (value, key) {
+      $scope.campaigns = value;
       
     });
     //alert($scope.data.length);
@@ -555,6 +630,38 @@ $scope.openBrowserlink = function (nodeID) {
       // or server returns response with an error status.
       console.log(response);
     });
+
+    //Getting Program Details
+$http({
+  method: "GET",
+  //url: 'https://www.maainternational.org.au/rest/content/currentsite/defaultculture/all/our-projects/' + currentAllias + '?format=json',
+  url: 'https://www.maanational.org.au/rest/content/currentsite/defaultculture/all/our-projects/'+currentAllias+'?classnames=MAA.Program&columns=DocumentName,ProgramDescription,Published,ProgramDefaultProject&format=json',
+  headers: {
+    'Accept': 'application/json',
+    "ContentType": "application/x-www-form-urlencoded",
+    "authorization": "Basic bW9iaWxlYXBwdXNlckBtdXNsaW1haWQub3JnLmF1OmQkOSZ0QldBOFV3dkp6VQ==",
+  }
+}).then(function successCallback(response) {
+  console.log(response);
+  $scope.data = response.data;
+  angular.forEach($scope.data, function (value, key) {
+    //$scope.data = value;
+    $scope.program = value;
+  });
+//Get the Project Details
+  $scope.spinner = false;  
+  //$scope.ProgramDefaultProject = $scope.data[1].MAA_Program[0].ProgramDefaultProject;      
+ // alert($scope.ProgramDefaultProject);
+}, function errorCallback(response) {
+  // called asynchronously if an error occurs
+  // or server returns response with an error status.
+  console.log(response);
+});
+
+
+
+
+
 
     $scope.readfull = true;
     $scope.readless = false;
@@ -586,20 +693,25 @@ $scope.openBrowserlink = function (nodeID) {
 
     $scope.expressDonateLocCamp = function (nodeID) {
       //alert(nodeID);
-      var options = {
+      /*var options = {
         location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
-      };
+      };*/
 
-      $cordovaInAppBrowser.open('https://local.muslimaid.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
+
+var link= 'https://www.maanational.org.au/donate-now?&campaign=' + nodeID;
+window.open(link,'_system');
+
+
+      /*$cordovaInAppBrowser.open('https://www.maanational.org.au/donate-now?&campaign=' + nodeID, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
         })
         .catch(function (event) {
           // error
-        });
+        });*/
 
     };
 
@@ -624,20 +736,22 @@ $scope.openBrowserlink = function (nodeID) {
 //Open an In-App browser with a link as parameter  
 $scope.openBrowserlink = function (nodeID) {
 //alert(nodeID);
-      var options = {
+      /*var options = {
         location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
-      };
+      };*/
 
-      $cordovaInAppBrowser.open(nodeID, '_blank', options)
+var link=nodeID;
+window.open(link,'_system');
+      /*$cordovaInAppBrowser.open(nodeID, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
         })
         .catch(function (event) {
           // error
-        });
+        });*/
 
     };
 
@@ -662,20 +776,25 @@ $scope.openBrowserlink = function (nodeID) {
 //Open an In-App browser with a link as parameter  
 $scope.openBrowserlink = function (nodeID) {
 //alert(nodeID);
-      var options = {
+      /*var options = {
         location: 'yes',
         clearcache: 'yes',
         toolbar: 'yes'
-      };
+      };*/
 
-      $cordovaInAppBrowser.open(nodeID, '_blank', options)
+
+var link=nodeID;
+window.open(link,'_system');
+
+
+      /*$cordovaInAppBrowser.open(nodeID, '_blank', options)
         .then(function (event) {
           // success
           $scope.donation.amount = 0;
         })
         .catch(function (event) {
           // error
-        });
+        });*/
 
     };
 
