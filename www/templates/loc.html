@@ -94,7 +94,7 @@
                          <div class="program-item shadow" ng-repeat="product in programs | orderBy: 'NodeOrder' | filter: {Published:'1'}">
 <div class="col-md-4 " ng-click="go('/localproject/{{product.NodeAlias}}')">
                             <div class="item-projects">
-                                <img ng-src="{{'https://local.muslimaid.org.au'+product.Program25AppIcon.substring(1,product.Program25AppIcon.indexOf('?'))}}" width="96px" height="96px">
+                                <img ng-src="{{'https://www.maanational.org.au/'+product.Program25AppIcon.substring(1,product.Program25AppIcon.indexOf('?'))}}" width="96px" height="96px">
                                 <span>{{product.DocumentName}}</span>
                             </div>
                         </div>

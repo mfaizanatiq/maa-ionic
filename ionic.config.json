@@ -1,4 +1,8 @@
 {
   "name": "maa-ionic",
-  "app_id": "0326ad10"
+  "app_id": "0326ad10",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic1"
 }
