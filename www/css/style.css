@@ -95,7 +95,7 @@ color:#485f0f;
 }
 
 .logo-row{
-    margin-top: 100px;
+    margin-top: 200px;
 }
 
 .mid-col{
@@ -146,11 +146,23 @@ color:#485f0f;
     color: #ffffff;
     border-color: #93C01F;
 }
-
 .region-heading{
-    font-size:18px;
+    font-size:20px;
+    font-weight:bold;
     color:#ffffff;
     font-family: 'museo sans 300'
+}
+
+.pane-home .button-block{
+    
+   /* background-color: #93C01F;
+    color: #ffffff;
+    border-color: #93C01F;*/
+    background-color: #ffffff;
+    color: #333333;
+    /*border-color: #93C01F;*/
+    font-weight:bold;
+    font-size:11pt;
 }
 
 .donation-col{
